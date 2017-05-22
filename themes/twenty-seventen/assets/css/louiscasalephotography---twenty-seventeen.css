@@ -1,2 +1,39 @@
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,600,600i');
+
+body {
+	font-family: Montserrat, 'sans-serif';
+	color: #333;
+}
+
+section > div:first-child {
+	position: fixed;
+}
+
+h1 {
+	font-weight: 200;
+	letter-spacing: 5px;
+	margin-bottom: 40px;
+}
+
+ul {
+	padding: 0;
+}
+
+ul li {
+	margin: 20px 0;
+}
+
+ul li a {
+	font-weight: 300;
+	font-size: 16px;
+}
+
+ul li a,
+ul li a:hover,
+ul li a:focus,
+ul li a:active,
+ul li a:active:focus {
+	text-decoration: none;
+	color: #333;
+}
