@@ -6,11 +6,16 @@ body {
 	color: #333;
 }
 
-a,
+a:hover,
 a:focus,
 a:active,
 a:active:focus {
 	text-decoration: none;
+	transition: 0.3s color ease-in-out;
+}
+
+a:hover {
+	color: #858585;
 }
 
 .container {
@@ -20,6 +25,11 @@ a:active:focus {
 .navigation {
 	position: fixed;
 	height: 100%;
+}
+
+.navigation a,
+.navigation a:hover {
+	color: #333;
 }
 
 .navigation h1 {
@@ -38,13 +48,8 @@ a:active:focus {
 }
 
 .navigation ul li a {
-	color: #333;
 	font-weight: 300;
 	font-size: 16px;
-}
-
-.navigation a:hover {
-	color: #333;
 }
 
 #carousel {

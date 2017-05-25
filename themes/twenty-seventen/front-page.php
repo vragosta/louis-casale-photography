@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div class="container">
 	<section class="navigation col-xs-12 col-sm-3">
-		<h1>Louis Casale Photography</h1>
+		<h1><a href="<?php echo home_url(); ?>">Louis Casale Photography</a></h1>
 		<ul>
 			<li><a href="<?php echo home_url(); ?>">Home</a></li>
 			<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
@@ -18,6 +18,11 @@ get_header(); ?>
 			<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
 			<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact</a></li>
 		</ul>
+		<div class="social">
+			<a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+		</div>
 	</section>
 	<section class="col-xs-12 col-sm-offset-3 col-sm-9">
 		<div id="carousel">
