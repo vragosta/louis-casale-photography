@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,600i');
 
+/*--- Core Components ---*/
 body {
 	font-family: Montserrat, 'sans-serif';
 	color: #333;
@@ -18,18 +19,24 @@ a:hover {
 	color: #858585;
 }
 
+/*--- Wrapper Class ---*/
 .container {
 	padding: 40px 0;
 }
 
+/*--- Navigation ---*/
 .navigation {
 	position: fixed;
 	height: 100%;
 }
 
-.navigation a,
-.navigation a:hover {
+.navigation a {
 	color: #333;
+	transition: 0.2s color ease-in-out;
+}
+
+.navigation a:hover {
+	color: #858585;
 }
 
 .navigation h1 {
@@ -52,16 +59,37 @@ a:hover {
 	font-size: 16px;
 }
 
-#carousel {
+.navigation .social a:nth-child(2) {
+	margin: 0 8px;
+}
+
+.navigation .social i {
+	font-size: 24px;
+	opacity: 0.75;
+	transition: 0.3s opacity ease-in-out;
+}
+
+.navigation .social i:hover {
+	opacity: 1;
+}
+
+/*--- Carousel ---*/
+.carousel {
 	margin: 0 0 40px 0;
 }
 
-#carousel figure {
+.carousel figure {
 	padding-bottom: 10%;
 	position: relative;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
 }
 
-#carousel figure div {
+.slick-initialized figure {
+	opacity: 1;
+}
+
+.carousel figure div {
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -71,6 +99,7 @@ a:hover {
 	right: 0;
 }
 
+/*--- About Excerpt ---*/
 .about-excerpt {
 	margin: 0 0 40px 0;
 }
@@ -104,10 +133,12 @@ a:hover {
 	font-size: 20px;
 	font-family: Montserrat, 'sans-serif';
 	font-weight: 200;
+	transition: 0.2s color ease-in-out;
 }
 
 .inline-navigation a:hover {
 	text-decoration: none;
+	color: #858585;
 }
 
 .vertical-line {
@@ -117,10 +148,31 @@ a:hover {
 
 .recent-photographs {
 	padding: 40px 0;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
 }
 
 .recent-photographs h2 {
 	font-family: Montserrat, 'sans-serif';
 	font-weight: 200;
 	font-size: 20px;
+	margin: 0;
+}
+
+.recent-photographs .carousel {
+	margin: 40px 0;
+}
+
+.recent-photographs .slick-slide {
+	margin: 0 10px;
+}
+
+.recent-photographs .slick-list {
+	margin: 0 -10px;
+}
+
+.recent-photographs a {
+	font-weight: 300;
+	color: #333;
+	float: right;
 }
