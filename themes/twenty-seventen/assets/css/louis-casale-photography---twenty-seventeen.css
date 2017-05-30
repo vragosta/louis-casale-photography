@@ -73,11 +73,21 @@ a:hover {
 	opacity: 1;
 }
 
-/*--- Carousel ---*/
-.carousel {
-	margin: 0 0 40px 0;
+/*--- Make padding orthogonal excluding the carousel ---*/
+.content > div:not(.carousel) {
+	padding: 40px 0;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
 }
 
+div > h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 200;
+	font-size: 20px;
+	margin: 0;
+}
+
+/*--- Carousel ---*/
 .carousel figure {
 	padding-bottom: 10%;
 	position: relative;
@@ -100,10 +110,6 @@ a:hover {
 }
 
 /*--- About Excerpt ---*/
-.about-excerpt {
-	margin: 0 0 40px 0;
-}
-
 .about-excerpt p {
 	font-family: Montserrat, 'sans-serif';
 	font-size: 14px;
@@ -114,9 +120,6 @@ a:hover {
 }
 
 .inline-navigation {
-	padding: 40px 0;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -146,33 +149,51 @@ a:hover {
 	height: 20px;
 }
 
-.recent-photographs {
-	padding: 40px 0;
-	border-bottom: 1px solid #ccc;
-	overflow: hidden;
-}
-
-.recent-photographs h2 {
-	font-family: Montserrat, 'sans-serif';
-	font-weight: 200;
-	font-size: 20px;
-	margin: 0;
-}
-
 .recent-photographs .carousel {
 	margin: 40px 0;
 }
 
+/*--- Give space between carousel items ---*/
 .recent-photographs .slick-slide {
 	margin: 0 10px;
 }
 
+/*--- Give space between carousel items ---*/
 .recent-photographs .slick-list {
 	margin: 0 -10px;
 }
 
-.recent-photographs a {
+a.pull-right {
 	font-weight: 300;
 	color: #333;
 	float: right;
+}
+
+/*--- Blog ---*/
+.latest-posts .row {
+	margin: 40px 0;
+}
+
+.latest-posts .blog-post:first-child {
+	padding: 0 20px 0 0;
+}
+
+.latest-posts .blog-post:last-child {
+	padding: 0 0 0 20px;
+}
+
+.latest-posts .blog-post h4 {
+	font-size: 22px;
+	margin: 0;
+}
+
+.latest-posts .blog-post span {
+	font-style: italic;
+}
+
+.latest-posts .blog-post p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 10px 0 0 0;
+	line-height: 1.8;
 }

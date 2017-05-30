@@ -24,7 +24,7 @@ get_header(); ?>
 			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 		</div>
 	</section>
-	<section class="col-xs-12 col-sm-offset-3 col-sm-9">
+	<section class="content col-xs-12 col-sm-offset-3 col-sm-9">
 		<div class="carousel main">
 			<figure>
 				<div style="background-image: url( <?php echo esc_attr( LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . '/assets/images/1008x667.jpg' ); ?> );"></div>
@@ -69,7 +69,23 @@ get_header(); ?>
 					<div style="background-image: url( <?php echo esc_attr( LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . '/assets/images/1920x1080.jpg' ); ?> );"></div>
 				</figure>
 			</div>
-			<a href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+			<a class="pull-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+		</div>
+		<div class="latest-posts">
+			<h2>Latest Blog Posts</h2>
+			<div class="row">
+				<div class="blog-post col-xs-12 col-sm-6">
+					<h4>This is an example title.</h4>
+					<span>May 30, 2017</span>
+					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				</div>
+				<div class="blog-post col-xs-12 col-sm-6">
+					<h4>This is an example title.</h4>
+					<span>May 27, 2017</span>
+					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				</div>
+			</div>
+			<a class="pull-right" href="<?php echo home_url( '/blog/' ); ?>">View more posts >></a>
 		</div>
 	</section>
 </div>
