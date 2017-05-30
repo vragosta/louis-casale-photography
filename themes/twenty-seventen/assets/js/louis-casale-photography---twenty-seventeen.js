@@ -13,7 +13,7 @@
 		autoplaySpeed: 3000
 	} );
 
-	$( '.recent-photographs .carousel' ).slick( {
+	$( '.carousel:not(.main)' ).slick( {
 		infinite: true,
 		slidesToShow: 2,
 		autoplay: true,

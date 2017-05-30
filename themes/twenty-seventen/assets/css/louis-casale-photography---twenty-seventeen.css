@@ -21,7 +21,8 @@ a:hover {
 
 /*--- Wrapper Class ---*/
 .container {
-	padding: 40px 0;
+	/*padding: 40px 0;*/
+	padding: 40px 0 0 0;
 }
 
 /*--- Navigation ---*/
@@ -196,4 +197,9 @@ a.pull-right {
 	hyphens: auto;
 	margin: 10px 0 0 0;
 	line-height: 1.8;
+}
+
+.copyright {
+	padding: 40px 0;
+	text-align: center;
 }

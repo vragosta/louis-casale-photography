@@ -87,6 +87,9 @@ get_header(); ?>
 			</div>
 			<a class="pull-right" href="<?php echo home_url( '/blog/' ); ?>">View more posts >></a>
 		</div>
+		<div class="copyright">
+			<span>Copyright &copy; 2017 Louis Casale Photography</span>
+		</div>
 	</section>
 </div>
 
