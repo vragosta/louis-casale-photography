@@ -19,6 +19,13 @@ a:hover {
 	color: #858585;
 }
 
+div > h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	font-size: 20px;
+	margin: 0;
+}
+
 /*--- Wrapper Class ---*/
 .container {
 	/*padding: 40px 0;*/
@@ -81,11 +88,15 @@ a:hover {
 	overflow: hidden;
 }
 
-div > h2 {
-	font-family: Montserrat, 'sans-serif';
-	font-weight: 200;
-	font-size: 20px;
-	margin: 0;
+.content a {
+	font-weight: 400;
+	font-size: 16px;
+	color: #858585;
+	transition: 0.3s color ease-in-out;
+}
+
+.content a:hover {
+	color: #333;
 }
 
 /*--- Carousel ---*/
@@ -114,7 +125,6 @@ div > h2 {
 .about-excerpt p {
 	font-family: Montserrat, 'sans-serif';
 	font-size: 14px;
-	font-weight: 300;
 	line-height: 1.8;
 	word-break: break-word;
 	hyphens: auto;
@@ -136,7 +146,7 @@ div > h2 {
 	color: #333;
 	font-size: 20px;
 	font-family: Montserrat, 'sans-serif';
-	font-weight: 200;
+	font-weight: 300;
 	transition: 0.2s color ease-in-out;
 }
 
@@ -165,9 +175,9 @@ div > h2 {
 }
 
 a.pull-right {
-	font-weight: 300;
-	color: #333;
-	float: right;
+	/*font-weight: 400;
+	font-size: 16px;
+	color: #858585;*/
 }
 
 /*--- Blog ---*/
