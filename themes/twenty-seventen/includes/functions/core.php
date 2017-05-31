@@ -80,10 +80,18 @@ function scripts() {
 		true
 	);
 
+	wp_register_script(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
+		array( 'jquery' ),
+		STORYCORPS_ORG_VERSION,
+		true
+	);
+
 	wp_enqueue_script(
 		'louis_casale_photography',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louiscasalephotography---twenty-seventeen.js",
-		array( 'jquery', 'bootstrap' ),
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louis-casale-photography---twenty-seventeen.js",
+		array( 'jquery', 'bootstrap', 'slick' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
 		true
 	);
@@ -126,10 +134,24 @@ function styles() {
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 
+	wp_register_style(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+		array(),
+		STORYCORPS_ORG_VERSION
+	);
+
+	wp_register_style(
+		'slick-theme',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+		array( 'slick' ),
+		STORYCORPS_ORG_VERSION
+	);
+
 	wp_enqueue_style(
 		'louis_casale_photography',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louiscasalephotography---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize' ),
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louis-casale-photography---twenty-seventeen.css",
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 }
