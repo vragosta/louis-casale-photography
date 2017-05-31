@@ -28,7 +28,6 @@ div > h2 {
 
 /*--- Wrapper Class ---*/
 .container {
-	/*padding: 40px 0;*/
 	padding: 40px 0 0 0;
 }
 
@@ -111,7 +110,7 @@ div > h2 {
 	opacity: 1;
 }
 
-.carousel figure div {
+figure div {
 	background-position: center;
 	background-size: cover;
 	position: absolute;
@@ -174,12 +173,6 @@ div > h2 {
 	margin: 0 -10px;
 }
 
-a.pull-right {
-	/*font-weight: 400;
-	font-size: 16px;
-	color: #858585;*/
-}
-
 /*--- Blog ---*/
 .latest-posts .row {
 	margin: 40px 0;
@@ -211,5 +204,19 @@ a.pull-right {
 
 .copyright {
 	padding: 40px 0;
+	text-align: center;
+}
+
+/*--- Archive ---*/
+figure.photo {
+	padding-bottom: 70%;
+	position: relative;
+}
+
+figure.photo div:hover {
+	opacity: 0.9;
+}
+
+.archive-item h5 {
 	text-align: center;
 }
