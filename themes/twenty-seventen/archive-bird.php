@@ -20,18 +20,15 @@ $count = 1; ?>
 		<?php while ( $birds->have_posts() ) : $birds->the_post(); ?>
 			<div class="archive-item col-xs-12 col-sm-4">
 				<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php the_excerpt(); ?>">
-					<figure class="photo">
+					<figure class="photo unloaded">
 						<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
 					</figure>
 				</a>
-				<h5><?php the_title(); ?></h5>
+				<h5 class="unloaded"><?php the_title(); ?></h5>
 			</div>
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	</section>
 <?php endif; ?>
-
-<section class="archive col-xs-12 col-sm-offset-3 col-sm-9">
-</section>
 
 <?php get_footer(); ?>

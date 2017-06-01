@@ -81,9 +81,7 @@ div > h2 {
 }
 
 /*--- Make padding orthogonal excluding the carousel ---*/
-.content > div:not(.carousel) {
-	padding: 40px 0;
-	border-bottom: 1px solid #ccc;
+.content > div {
 	overflow: hidden;
 }
 
@@ -100,7 +98,7 @@ div > h2 {
 
 /*--- Carousel ---*/
 .carousel figure {
-	padding-bottom: 10%;
+	padding-bottom: 56.25%;
 	position: relative;
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
@@ -120,7 +118,11 @@ figure div {
 	right: 0;
 }
 
-/*--- About Excerpt ---*/
+/*--- About excerpt ---*/
+.about-excerpt {
+	padding: 40px 0;
+}
+
 .about-excerpt p {
 	font-family: Montserrat, 'sans-serif';
 	font-size: 14px;
@@ -129,10 +131,18 @@ figure div {
 	hyphens: auto;
 }
 
+.about-excerpt p:last-child {
+	margin-bottom: 0;
+}
+
+/*--- Inline navigation panel ---*/
 .inline-navigation {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 40px 20px;
 }
 
 .inline-navigation h2 {
@@ -159,6 +169,12 @@ figure div {
 	height: 20px;
 }
 
+/*--- Recent photographs section ---*/
+.recent-photographs {
+	border-bottom: 1px solid #ccc;
+	padding: 40px 0;
+}
+
 .recent-photographs .carousel {
 	margin: 40px 0;
 }
@@ -174,6 +190,10 @@ figure div {
 }
 
 /*--- Blog ---*/
+.latest-posts {
+	padding: 40px 0;
+}
+
 .latest-posts .row {
 	margin: 40px 0;
 }
@@ -187,8 +207,12 @@ figure div {
 }
 
 .latest-posts .blog-post h4 {
-	font-size: 22px;
 	margin: 0;
+}
+
+.latest-posts .blog-post h4 a {
+	font-size: 22px;
+	color: #333;
 }
 
 .latest-posts .blog-post span {
@@ -205,12 +229,22 @@ figure div {
 .copyright {
 	padding: 40px 0;
 	text-align: center;
+	border-top: 1px solid #ccc;
 }
 
 /*--- Archive ---*/
+.archive {
+	padding-bottom: 40px;
+}
+
 figure.photo {
-	padding-bottom: 70%;
+	padding-bottom: 56.25%;
 	position: relative;
+	transition: opacity 0.8s ease-in-out;
+}
+
+figure.unloaded {
+	opacity: 0;
 }
 
 figure.photo div:hover {
@@ -219,4 +253,9 @@ figure.photo div:hover {
 
 .archive-item h5 {
 	text-align: center;
+	transition: opacity 0.8s ease-in-out;
+}
+
+.archive-item h5.unloaded {
+	opacity: 0;
 }
