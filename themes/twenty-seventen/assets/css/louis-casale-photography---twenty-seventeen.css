@@ -19,7 +19,7 @@ a:hover {
 	color: #858585;
 }
 
-div > h2 {
+.home div > h2 {
 	font-family: Montserrat, 'sans-serif';
 	font-weight: 300;
 	font-size: 20px;
@@ -80,14 +80,16 @@ div > h2 {
 	opacity: 1;
 }
 
-/*--- Make padding orthogonal excluding the carousel ---*/
 .content > div {
 	overflow: hidden;
 }
 
-.content a {
+.home a {
 	font-weight: 400;
 	font-size: 16px;
+}
+
+.content a {
 	color: #858585;
 	transition: 0.3s color ease-in-out;
 }
@@ -258,4 +260,68 @@ figure.photo div:hover {
 
 .archive-item h5.unloaded {
 	opacity: 0;
+}
+
+/*--- Blog ---*/
+.blog-item {
+	padding: 40px 0;
+}
+
+.blog-item:first-child {
+	padding: 0 0 40px 0;
+}
+
+.blog-item:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+
+.blog-item figure {
+	margin-bottom: 20px;
+}
+
+.blog-item h2 {
+	margin: 0;
+}
+
+.blog-item h2 a {
+	color: #333;
+	font-size: 22px;
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	transition: 0.2s color ease-in-out;
+}
+
+.blog-item h2 a:hover {
+	text-decoration: none;
+	color: #858585;
+}
+
+.blog-item p {
+	margin: 20px 0 0 0;
+	word-break: break-word;
+	hyphens: auto;
+	line-height: 1.8;
+}
+
+/*--- Blog sidebar ---*/
+.blog .widget-item {
+	padding: 40px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.blog .widget-item:first-child {
+	padding: 0 0 40px 0;
+}
+
+.blog .widget-item h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+.blog .widget-item p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 10px 0 0 0;
+	line-height: 1.8;
 }

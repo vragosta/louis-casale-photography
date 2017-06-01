@@ -13,7 +13,7 @@ $birds = new WP_Query( [
 	'posts_per_page' => -1
 ] );
 
-$count = 1; ?>
+?>
 
 <?php if ( $birds->have_posts() ) : ?>
 	<section class="archive col-xs-12 col-sm-offset-3 col-sm-9">
