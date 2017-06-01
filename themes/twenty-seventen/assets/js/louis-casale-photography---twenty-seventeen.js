@@ -19,4 +19,9 @@
 		autoplay: true,
 		autoplaySpeed: 2500
 	} );
+
+	if ( $( '.unloaded' ).length ) {
+		$( 'figure.unloaded' ).removeClass( 'unloaded' );
+		$( 'h5.unloaded' ).removeClass( 'unloaded' );
+	}
 } )( jQuery );
