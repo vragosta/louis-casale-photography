@@ -84,11 +84,6 @@ a:hover {
 	overflow: hidden;
 }
 
-.home a {
-	font-weight: 400;
-	font-size: 16px;
-}
-
 .content a {
 	color: #858585;
 	transition: 0.3s color ease-in-out;
