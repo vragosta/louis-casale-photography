@@ -1,0 +1,322 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,600i');
+
+/*--- Core Components ---*/
+body {
+	font-family: Montserrat, 'sans-serif';
+	color: #333;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:active:focus {
+	text-decoration: none;
+	transition: 0.3s color ease-in-out;
+}
+
+a:hover {
+	color: #858585;
+}
+
+.home div > h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	font-size: 20px;
+	margin: 0;
+}
+
+/*--- Wrapper Class ---*/
+.container {
+	padding: 40px 0 0 0;
+}
+
+/*--- Navigation ---*/
+.navigation {
+	position: fixed;
+	height: 100%;
+}
+
+.navigation a {
+	color: #333;
+	transition: 0.2s color ease-in-out;
+}
+
+.navigation a:hover {
+	color: #858585;
+}
+
+.navigation h1 {
+	font-weight: 200;
+	letter-spacing: 5px;
+	margin: 0 0 40px 0;
+}
+
+.navigation ul {
+	padding: 0;
+	list-style: none;
+}
+
+.navigation ul li {
+	margin: 20px 0;
+}
+
+.navigation ul li a {
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.navigation .social a:nth-child(2) {
+	margin: 0 8px;
+}
+
+.navigation .social i {
+	font-size: 24px;
+	opacity: 0.75;
+	transition: 0.3s opacity ease-in-out;
+}
+
+.navigation .social i:hover {
+	opacity: 1;
+}
+
+.content > div {
+	overflow: hidden;
+}
+
+.content a {
+	color: #858585;
+	transition: 0.3s color ease-in-out;
+}
+
+.content a:hover {
+	color: #333;
+}
+
+/*--- Carousel ---*/
+.carousel figure {
+	padding-bottom: 56.25%;
+	position: relative;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.slick-initialized figure {
+	opacity: 1;
+}
+
+figure div {
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- About excerpt ---*/
+.about-excerpt {
+	padding: 40px 0;
+}
+
+.about-excerpt p {
+	font-family: Montserrat, 'sans-serif';
+	font-size: 14px;
+	line-height: 1.8;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+.about-excerpt p:last-child {
+	margin-bottom: 0;
+}
+
+/*--- Inline navigation panel ---*/
+.inline-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 40px 20px;
+}
+
+.inline-navigation h2 {
+	display: flex;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.inline-navigation a {
+	color: #333;
+	font-size: 20px;
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	transition: 0.2s color ease-in-out;
+}
+
+.inline-navigation a:hover {
+	text-decoration: none;
+	color: #858585;
+}
+
+.vertical-line {
+	border-left: 1px solid #ccc;
+	height: 20px;
+}
+
+/*--- Recent photographs section ---*/
+.recent-photographs {
+	border-bottom: 1px solid #ccc;
+	padding: 40px 0;
+}
+
+.recent-photographs .carousel {
+	margin: 40px 0;
+}
+
+/*--- Give space between carousel items ---*/
+.recent-photographs .slick-slide {
+	margin: 0 10px;
+}
+
+/*--- Give space between carousel items ---*/
+.recent-photographs .slick-list {
+	margin: 0 -10px;
+}
+
+/*--- Blog ---*/
+.latest-posts {
+	padding: 40px 0;
+}
+
+.latest-posts .row {
+	margin: 40px 0;
+}
+
+.latest-posts .blog-post:first-child {
+	padding: 0 20px 0 0;
+}
+
+.latest-posts .blog-post:last-child {
+	padding: 0 0 0 20px;
+}
+
+.latest-posts .blog-post h4 {
+	margin: 0;
+}
+
+.latest-posts .blog-post h4 a {
+	font-size: 22px;
+	color: #333;
+}
+
+.latest-posts .blog-post span {
+	font-style: italic;
+}
+
+.latest-posts .blog-post p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 10px 0 0 0;
+	line-height: 1.8;
+}
+
+.copyright {
+	padding: 40px 0;
+	text-align: center;
+	border-top: 1px solid #ccc;
+}
+
+/*--- Archive ---*/
+.archive {
+	padding-bottom: 40px;
+}
+
+figure.photo {
+	padding-bottom: 56.25%;
+	position: relative;
+	transition: opacity 0.8s ease-in-out;
+}
+
+figure.unloaded {
+	opacity: 0;
+}
+
+figure.photo div:hover {
+	opacity: 0.9;
+}
+
+.archive-item h5 {
+	text-align: center;
+	transition: opacity 0.8s ease-in-out;
+}
+
+.archive-item h5.unloaded {
+	opacity: 0;
+}
+
+/*--- Blog ---*/
+.blog-item {
+	padding: 40px 0;
+}
+
+.blog-item:first-child {
+	padding: 0 0 40px 0;
+}
+
+.blog-item:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+
+.blog-item figure {
+	margin-bottom: 20px;
+}
+
+.blog-item h2 {
+	margin: 0;
+}
+
+.blog-item h2 a {
+	color: #333;
+	font-size: 22px;
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	transition: 0.2s color ease-in-out;
+}
+
+.blog-item h2 a:hover {
+	text-decoration: none;
+	color: #858585;
+}
+
+.blog-item p {
+	margin: 20px 0 0 0;
+	word-break: break-word;
+	hyphens: auto;
+	line-height: 1.8;
+}
+
+/*--- Blog sidebar ---*/
+.blog .widget-item {
+	padding: 40px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.blog .widget-item:first-child {
+	padding: 0 0 40px 0;
+}
+
+.blog .widget-item h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+.blog .widget-item p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 10px 0 0 0;
+	line-height: 1.8;
+}
