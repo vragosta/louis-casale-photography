@@ -39,10 +39,6 @@ $blog_posts = new WP_Query( [
 	'posts_per_page' => 2
 ] );
 
-// echo '<pre>';
-// var_dump( $blog_posts->posts );
-// echo '<pre>';
-// exit();
 ?>
 
 <section class="content col-xs-12 col-sm-offset-3 col-sm-9">
@@ -102,7 +98,7 @@ $blog_posts = new WP_Query( [
 						<h4>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</h4>
-						<span><?php echo date_format( date_create( $post->post_date ), 'F jS, Y' ); ?></span>
+						<span><?php echo date_format( date_create( get_the_date() ), 'F jS, Y' ); ?></span>
 						<?php $content = get_the_content(); ?>
 						<p><?php echo wp_trim_words( $content, '60', '<a href="' . get_the_permalink() . '">...Read More</a>' ); ?></p>
 					</div>
