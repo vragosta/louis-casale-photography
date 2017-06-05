@@ -327,3 +327,29 @@ figure.photo div:hover {
 	margin: 10px 0 0 0;
 	line-height: 1.8;
 }
+
+/*--- Page ---*/
+.page p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 0 0 20px 0;
+	line-height: 1.8;
+}
+
+.page ul {
+	list-style: none;
+	padding: 0;
+}
+
+.page .content {
+	padding-bottom: 40px;
+}
+
+.photo-container {
+	width: 400px;
+	margin: 0 auto 40px;
+}
+
+.photo-container figure {
+	padding-bottom: 100%;
+}
