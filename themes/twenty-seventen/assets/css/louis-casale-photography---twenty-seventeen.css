@@ -353,3 +353,7 @@ figure.photo div:hover {
 .photo-container figure {
 	padding-bottom: 100%;
 }
+
+.photo-container figure div:hover {
+	opacity: 1;
+}
