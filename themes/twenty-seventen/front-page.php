@@ -31,7 +31,7 @@ endif;
 # Get the most recent birds for the secondary carousel.
 $recent_birds = new WP_Query( [
 	'post_type'      => 'bird',
-	'posts_per_page' => 6
+	'posts_per_page' => 2
 ] );
 
 $blog_posts = new WP_Query( [
@@ -75,12 +75,15 @@ $blog_posts = new WP_Query( [
 	<?php if ( $recent_birds->have_posts() ) : ?>
 		<div class="recent-photographs">
 			<h2>Recent Photographs</h2>
-			<div class="carousel secondary">
+			<div class="row">
 				<?php while ( $recent_birds->have_posts() ) : $recent_birds->the_post(); ?>
-					<div>
-						<figure>
-							<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
-						</figure>
+					<div class="recent-item col-xs-12 col-sm-6">
+						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php the_excerpt(); ?>">
+							<figure class="photo unloaded">
+								<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
+							</figure>
+						</a>
+						<h5 class="unloaded"><?php the_title(); ?></h5>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

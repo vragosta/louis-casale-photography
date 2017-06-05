@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the front page.
+ * Template for displaying the blog archive.
  *
  * @package Louis Casale Photography - Twenty Seventeen
  * @since   0.1.0

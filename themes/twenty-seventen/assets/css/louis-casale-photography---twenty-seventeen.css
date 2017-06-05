@@ -172,18 +172,21 @@ figure div {
 	padding: 40px 0;
 }
 
-.recent-photographs .carousel {
+/*.recent-photographs .carousel {*/
+.recent-photographs .row {
 	margin: 40px 0;
 }
 
-/*--- Give space between carousel items ---*/
-.recent-photographs .slick-slide {
-	margin: 0 10px;
+.recent-photographs .recent-item:first-child {
+	padding: 0 20px 0 0;
 }
 
-/*--- Give space between carousel items ---*/
-.recent-photographs .slick-list {
-	margin: 0 -10px;
+.recent-photographs .recent-item:last-child {
+	padding: 0 0 0 20px;
+}
+
+.recent-photographs h5 {
+	text-align: center;
 }
 
 /*--- Blog ---*/
@@ -246,6 +249,10 @@ figure.unloaded {
 
 figure.photo div:hover {
 	opacity: 0.9;
+}
+
+.archive-item {
+	padding-bottom: 20px;
 }
 
 .archive-item h5 {

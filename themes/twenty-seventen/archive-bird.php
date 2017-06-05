@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Listen post archive
+ * Template for displaying the bird archive.
  *
  * @package Louis Casale Photography - Twenty Seventeen
  * @since   0.1.0
