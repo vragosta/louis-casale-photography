@@ -8,11 +8,9 @@
 
 get_header();
 
-global $post;
+global $post; ?>
 
-?>
-
-<section class="content col-xs-12 col-sm-offset-3 col-sm-6">
+<section class="col-xs-12 col-sm-offset-3 col-sm-6">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>
 		<div class="blog-item">
