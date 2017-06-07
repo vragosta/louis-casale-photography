@@ -60,7 +60,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<button class="btn btn-info">Submit</button>
+		<button class="btn btn-info contact">Submit</button>
 
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); ?>
