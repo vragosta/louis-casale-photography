@@ -357,3 +357,54 @@ figure.photo div:hover {
 .photo-container figure div:hover {
 	opacity: 1;
 }
+
+.page .excerpt {
+	margin-bottom: 40px;
+}
+
+.page .excerpt p {
+	margin: 0;
+	text-align: center;
+	line-height: 1.2;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.page .excerpt p:last-child {
+	margin-top: 40px;
+}
+
+.page .field-container {
+	margin: 20px -15px;
+}
+
+.page .field-container label {
+	font-weight: 300;
+}
+
+.page .field-container input,
+.page .field-container textarea {
+	background: #fafafa;
+	border-radius: 0;
+}
+
+.page .field-container textarea {
+	min-height: 120px;
+}
+
+.page .field-container input:focus,
+.page .field-container textarea:focus {
+	background: #fff;
+}
+
+.page .field-container + button {
+	border-radius: 0;
+	background: #5890b6;
+	border: none;
+	opacity: 1;
+	transition: 0.2s opacity ease-in-out;
+}
+
+.page .field-container + button:hover {
+	opacity: 0.9;
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the blog single template.
+ * Template for displaying the about template.
  *
  * @package Louis Casale Photography - Twenty Seventeen
  * @since   0.1.0
