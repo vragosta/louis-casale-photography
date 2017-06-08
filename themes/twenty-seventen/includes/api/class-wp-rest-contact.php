@@ -50,13 +50,13 @@ class WP_REST_Contact extends WP_REST_Controller {
 		$subject = $sender->subject;
 		$message = $sender->message;
 
-		$content = 'Dear Louis,
+		$content = '
+%1$s
 
-      %1$s
-
-      From,
-      %2$s %3$s
-      %4$s';
+From,
+%2$s %3$s
+%4$s
+		';
 
 		$content = sprintf(
 			$content,
