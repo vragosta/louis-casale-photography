@@ -97,8 +97,16 @@ function scripts() {
 		true
 	);
 
-	wp_localize_script( 'louis_casale_photography', 'themeUrl', LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL );
-}
+	wp_localize_script( 'louis_casale_photography', 'LouisCasalePhotography', [
+		'themeUrl' => LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL,
+		'options'  => [
+			'apiUrl'  => home_url( '/wp-json/v1' ),
+			'homeUrl' => home_url(),
+			'nonce'   => wp_create_nonce( 'wp_rest' ),
+		]
+	] );
+
+	}
 /**
  * Enqueue styles for front-end.
  *
