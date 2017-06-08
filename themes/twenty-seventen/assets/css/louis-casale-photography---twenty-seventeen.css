@@ -23,7 +23,7 @@ a:hover {
 	font-family: Montserrat, 'sans-serif';
 	font-weight: 300;
 	font-size: 20px;
-	margin: 0;
+	/*margin: 0;*/
 }
 
 /*--- Wrapper Class ---*/
@@ -35,6 +35,13 @@ a:hover {
 .navigation {
 	position: fixed;
 	height: 100%;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation {
+		position: relative;
+		margin: 0 0 40px 0;
+	}
 }
 
 .navigation a {
@@ -52,18 +59,48 @@ a:hover {
 	margin: 0 0 40px 0;
 }
 
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.navigation h1 {
+		font-size: 24px;
+	}
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation h1 {
+		text-align: center;
+	}
+}
+
 .navigation ul {
 	padding: 0;
 	list-style: none;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation ul {
+		text-align: center;
+	}
 }
 
 .navigation ul li {
 	margin: 20px 0;
 }
 
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.navigation ul li {
+		margin: 15px 0;
+	}
+}
+
 .navigation ul li a {
 	font-weight: 300;
 	font-size: 16px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation .social {
+		text-align: center;
+	}
 }
 
 .navigation .social a:nth-child(2) {
@@ -74,6 +111,12 @@ a:hover {
 	font-size: 24px;
 	opacity: 0.75;
 	transition: 0.3s opacity ease-in-out;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.navigation .social i {
+		font-size: 20px;
+	}
 }
 
 .navigation .social i:hover {
@@ -142,10 +185,24 @@ figure div {
 	padding: 40px 20px;
 }
 
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {*/
+@media only screen and ( max-width: 991px ) {
+	.inline-navigation {
+		flex-direction: column;
+	}
+}
+
 .inline-navigation h2 {
 	display: flex;
 	text-transform: uppercase;
 	margin: 0;
+}
+
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {*/
+@media only screen and ( max-width: 991px ) {
+	.inline-navigation h2 {
+		margin: 10px 0;
+	}
 }
 
 .inline-navigation a {
@@ -166,23 +223,46 @@ figure div {
 	height: 20px;
 }
 
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {*/
+@media only screen and ( max-width: 991px ) {
+	.vertical-line {
+		display: none;
+	}
+}
+
 /*--- Recent photographs section ---*/
 .recent-photographs {
 	border-bottom: 1px solid #ccc;
 	padding: 40px 0;
 }
 
-/*.recent-photographs .carousel {*/
+.recent-photographs h2 {
+	margin: 0;
+}
+
 .recent-photographs .row {
 	margin: 40px 0;
 }
 
-.recent-photographs .recent-item:first-child {
-	padding: 0 20px 0 0;
+@media only screen and ( min-width: 992px ) {
+	.recent-photographs .recent-item:first-child {
+		padding: 0 20px 0 0;
+	}
+
+	.recent-photographs .recent-item:last-child {
+		padding: 0 0 0 20px;
+	}
 }
 
-.recent-photographs .recent-item:last-child {
-	padding: 0 0 0 20px;
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {*/
+@media only screen and ( max-width: 991px ) {
+	.recent-photographs .recent-item {
+		padding: 0;
+	}
+
+	.recent-photographs .recent-item:first-child {
+		margin: 0 0 40px 0;
+	}
 }
 
 .recent-photographs h5 {
@@ -194,16 +274,33 @@ figure div {
 	padding: 40px 0;
 }
 
+.latest-posts h2 {
+	margin: 0;
+}
+
 .latest-posts .row {
 	margin: 40px 0;
 }
 
-.latest-posts .blog-post:first-child {
-	padding: 0 20px 0 0;
+@media only screen and ( min-width: 992px ) {
+	.latest-posts .blog-post:first-child {
+		padding: 0 20px 0 0;
+	}
+
+	.latest-posts .blog-post:last-child {
+		padding: 0 0 0 20px;
+	}
 }
 
-.latest-posts .blog-post:last-child {
-	padding: 0 0 0 20px;
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {*/
+@media only screen and ( max-width: 991px ) {
+	.latest-posts .blog-post {
+		padding: 0;
+	}
+
+	.latest-posts .blog-post:first-child {
+		margin: 0 0 40px 0;
+	}
 }
 
 .latest-posts .blog-post h4 {
@@ -341,9 +438,10 @@ figure.photo div:hover {
 	padding: 0;
 }
 
-.page .content {
+/*--- TODO ---*/
+/*.page .content {
 	padding-bottom: 40px;
-}
+}*/
 
 .photo-container {
 	width: 400px;

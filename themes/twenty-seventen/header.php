@@ -15,7 +15,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div class="container">
-			<section class="navigation col-xs-12 col-sm-2">
+			<section class="navigation col-xs-12 col-sm-3 col-md-2">
 				<h1><a href="<?php echo home_url(); ?>">Louis Casale Photography</a></h1>
 				<ul>
 					<li><a href="<?php echo home_url(); ?>">Home</a></li>
