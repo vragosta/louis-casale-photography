@@ -39,16 +39,16 @@ $blog_posts = new WP_Query( [
 	'posts_per_page' => 2
 ] );
 
-?>
+$page = get_page_by_path( 'about' );
+$about_page_excerpt = $page->post_excerpt; ?>
 
-<!-- <section class="content col-xs-12 col-sm-offset-3 col-sm-9"> -->
-<section class="content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
+<section class="front-page content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
 	<?php if ( $featured_birds->have_posts() ) : ?>
 		<div class="carousel main">
 			<?php while ( $featured_birds->have_posts() ) : $featured_birds->the_post(); ?>
 				<div>
-					<figure>
+					<figure class="unloaded">
 						<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
 					</figure>
 				</div>
@@ -57,13 +57,11 @@ $blog_posts = new WP_Query( [
 		</div>
 	<?php endif; ?>
 
-	<div class="about-excerpt">
-		<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-		<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-		<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-		<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-		<p><a href="<?php echo home_url( '/about/' ); ?>">Learn more about Louis.</a></p>
-	</div>
+	<?php if ( $about_page_excerpt ) { ?>
+		<div class="about-excerpt">
+			<?php echo $about_page_excerpt; ?>
+		</div>
+	<?php } ?>
 
 	<div class="inline-navigation">
 		<h2><a href="<?php echo home_url( '/gallery/' ); ?>">Browse Bird Gallery</a></h2>

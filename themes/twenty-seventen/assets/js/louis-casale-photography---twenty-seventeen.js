@@ -30,7 +30,7 @@
 	}
 
 	// TODO
-	$( '.contact' ).click(function() {
+	$( '.contact-btn' ).click(function() {
 		var firstname = $( '#firstname' ).val(),
 				lastname  = $( '#lastname' ).val(),
 				email     = $( '#email' ).val(),

@@ -331,7 +331,7 @@ figure div {
 
 /*--- Archive ---*/
 .archive {
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 }
 
 figure.photo {
@@ -438,14 +438,19 @@ figure.photo div:hover {
 	padding: 0;
 }
 
-/*--- TODO ---*/
-/*.page .content {
-	padding-bottom: 40px;
-}*/
+.page .about {
+	padding-bottom: 20px;
+}
 
 .photo-container {
 	width: 400px;
 	margin: 0 auto 40px;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.photo-container {
+		width: 300px;
+	}
 }
 
 .photo-container figure {
@@ -470,6 +475,10 @@ figure.photo div:hover {
 
 .page .excerpt p:last-child {
 	margin-top: 40px;
+}
+
+.page .contact {
+	padding-bottom: 40px;
 }
 
 .page .field-container {
