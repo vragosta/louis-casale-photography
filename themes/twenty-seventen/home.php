@@ -12,7 +12,6 @@ $blog_posts = new WP_Query( [ 'post_type' => 'post' ] ); ?>
 
 <?php if ( $blog_posts->have_posts() ) : ?>
 	<section class="blog content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
-	<!-- <section class="blog content col-xs-12 col-sm-offset-3 col-sm-6"> -->
 		<?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post(); ?>
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>
 			<div class="blog-item">
