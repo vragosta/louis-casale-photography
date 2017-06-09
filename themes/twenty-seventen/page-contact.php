@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<section class="content col-xs-12 col-sm-offset-3 col-sm-9">
+<section class="contact content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>
 
@@ -60,7 +60,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<button class="btn btn-info contact">Submit</button>
+		<button class="btn btn-info contact-btn">Submit</button>
 
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); ?>
