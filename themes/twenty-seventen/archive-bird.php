@@ -51,7 +51,7 @@ $count = 0;
 			<?php wp_reset_postdata(); ?>
 		</div>
 	<?php } else { ?>
-			<p style="text-align: center; padding: 40px 0;">There are no birds with this family.</p>
+			<p style="text-align: center; padding: 40px 0;">There are no birds currently in this family.</p>
 	<?php } ?>
 </section>
 
