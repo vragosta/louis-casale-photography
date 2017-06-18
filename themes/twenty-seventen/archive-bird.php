@@ -24,10 +24,6 @@ $birds = new WP_Query( [
 	]
 ] );
 
-// echo '<pre>';
-// var_dump( $birds->posts );
-// echo '</pre>';
-
 $count = 0;
 
 ?>

@@ -149,7 +149,6 @@ a:hover {
 
 figure div {
 	background-position: center;
-	/*background-size: cover;*/
 	background-size: contain;
 	position: absolute;
 	top: 0;
