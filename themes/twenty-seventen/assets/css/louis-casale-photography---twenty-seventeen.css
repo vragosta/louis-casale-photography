@@ -149,7 +149,8 @@ a:hover {
 
 figure div {
 	background-position: center;
-	background-size: cover;
+	/*background-size: cover;*/
+	background-size: contain;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -324,12 +325,8 @@ figure div {
 }
 
 /*--- Archive ---*/
-.archive {
-	padding-bottom: 20px;
-}
-
 figure.photo {
-	padding-bottom: 56.25%;
+	padding-bottom: 100%;
 	position: relative;
 	transition: opacity 0.8s ease-in-out;
 }
@@ -342,13 +339,24 @@ figure.photo div:hover {
 	opacity: 0.9;
 }
 
-.archive-item {
-	padding-bottom: 20px;
+.archive .row {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 20px 0;
+}
+
+.archive .row:first-child {
+	padding: 0 0 20px 0;
+}
+
+.archive .row:last-child {
+	border-bottom: none;
 }
 
 .archive-item h5 {
 	text-align: center;
 	transition: opacity 0.8s ease-in-out;
+	margin-bottom: 0;
 }
 
 .archive-item h5.unloaded {
