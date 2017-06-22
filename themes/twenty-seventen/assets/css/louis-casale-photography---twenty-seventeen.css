@@ -516,3 +516,9 @@ figure.photo div:hover {
 .page .field-container + button:hover {
 	opacity: 0.9;
 }
+
+p.not-set {
+	text-align: center;
+	padding: 40px 0;
+	margin: 0;
+}
