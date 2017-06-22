@@ -7,7 +7,9 @@
 
 ( function( $ ) {
 
-	// TODO
+	/**
+	 * Carousel settings.
+	 */
 	$( '.carousel.main' ).slick( {
 		infinite: true,
 		slidesToShow: 1,
@@ -15,21 +17,17 @@
 		autoplaySpeed: 3000
 	} );
 
-	// TODO
-	$( '.carousel:not(.main)' ).slick( {
-		infinite: true,
-		slidesToShow: 2,
-		autoplay: true,
-		autoplaySpeed: 2500
-	} );
-
-	// TODO
+	/**
+	 * Fade in effect for images and titles on page load.
+	 */
 	if ( $( '.unloaded' ).length ) {
 		$( 'figure.unloaded' ).removeClass( 'unloaded' );
 		$( 'h5.unloaded' ).removeClass( 'unloaded' );
 	}
 
-	// TODO
+	/**
+	 * Sends contact information to contact endpoint for processing.
+	 */
 	$( '.contact-btn' ).click(function() {
 		var firstname = $( '#firstname' ).val(),
 				lastname  = $( '#lastname' ).val(),
@@ -56,6 +54,13 @@
 			console.log( response );
 			location.reload();
 		} );
+	});
+
+	/**
+	 * Disables right click of images.
+	 */
+	$( 'figure div' ).bind( 'contextmenu', function( e ) {
+		return false;
 	});
 
 } )( jQuery );
