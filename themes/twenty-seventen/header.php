@@ -29,7 +29,18 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 					<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
 					<li><a href="<?php echo home_url( '/gallery/' ); ?>">Bird Gallery</a></li>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
-					<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact</a></li>
+					<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Contact
+								<i class="ion ion-chevron-down"></i>
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="<?php echo home_url( '/contact/' ); ?>">Louis Casale</a><br />
+								<a class="dropdown-item" href="<?php echo home_url( '/contact/' ); ?>">Web Developer</a>
+							</div>
+						</div>
+					</li>
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>
 					<div class="social">
