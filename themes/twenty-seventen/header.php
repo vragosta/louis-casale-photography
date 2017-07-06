@@ -8,9 +8,9 @@
 
 $user = get_user_by( 'login', 'lcasale' );
 
-$facebook  = get_user_meta( $user->ID, 'facebook', true ) ? get_user_meta( $user->ID, 'facebook', true ) : 'https://www.facebook.com';
-$twitter   = get_user_meta( $user->ID, 'twitter', true ) ? get_user_meta( $user->ID, 'twitter', true ) : 'https://www.twitter.com';
-$instagram = get_user_meta( $user->ID, 'instagram', true ) ? get_user_meta( $user->ID, 'instagram', true ) : 'https://www.instagram.com';
+$facebook  = get_user_meta( $user->ID, 'facebook', true );
+$twitter   = get_user_meta( $user->ID, 'twitter', true );
+$instagram = get_user_meta( $user->ID, 'instagram', true );
 
 ?>
 
@@ -31,9 +31,17 @@ $instagram = get_user_meta( $user->ID, 'instagram', true ) ? get_user_meta( $use
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
 					<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact</a></li>
 				</ul>
-				<div class="social">
-					<a href="<?php echo esc_attr( $facebook ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href="<?php echo esc_attr( $twitter ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href="<?php echo esc_attr( $instagram ); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				</div>
+				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>
+					<div class="social">
+						<?php if ( ! empty( $facebook ) ) { ?>
+							<a href="<?php echo esc_url( $facebook ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<?php } ?>
+						<?php if ( ! empty( $twitter ) ) { ?>
+							<a href="<?php echo esc_url( $twitter ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<?php } ?>
+						<?php if ( ! empty( $instagram ) ) { ?>
+							<a href="<?php echo esc_url( $instagram ); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</section>
