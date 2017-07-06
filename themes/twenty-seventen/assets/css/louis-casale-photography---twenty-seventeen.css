@@ -136,6 +136,11 @@ a:hover {
 }
 
 /*--- Carousel ---*/
+.carousel .slick-slide:focus,
+.carousel .slick-slide:focus:active {
+	outline: none;
+}
+
 .carousel figure {
 	padding-bottom: 56.25%;
 	position: relative;

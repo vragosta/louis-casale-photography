@@ -59,8 +59,13 @@
 	/**
 	 * Disables right click of images.
 	 */
-	$( 'figure div' ).bind( 'contextmenu', function( e ) {
+	// $( 'figure div' ).bind( 'contextmenu', function( e ) {
+	// 	return false;
+	// });
+
+	$( document ).on( 'contextmenu', 'figure div, #swipebox-slider img', function( e ) {
 		return false;
 	});
+	// $( 'figure div' ).on( 'cli')
 
 } )( jQuery );
