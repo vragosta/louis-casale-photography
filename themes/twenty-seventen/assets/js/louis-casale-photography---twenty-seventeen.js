@@ -29,18 +29,23 @@
 	 * Sends contact information to contact endpoint for processing.
 	 */
 	$( '.contact-btn' ).click(function() {
-		var firstname = $( '#firstname' ).val(),
+		var _id       = $( 'input[type=hidden]' ).val(),
+				firstname = $( '#firstname' ).val(),
 				lastname  = $( '#lastname' ).val(),
 				email     = $( '#email' ).val(),
 				subject   = $( '#subject' ).val(),
 				message   = $( '#message' ).val(),
-				data = {
+				data      = {
 					'firstname' : firstname,
 					'lastname' : lastname,
 					'email' : email,
 					'subject' : subject,
 					'message' : message
 				};
+
+		if ( _id ) {
+			data['_id'] = _id;
+		}
 
 		$.ajax( {
 			url: LouisCasalePhotography.options.apiUrl  + '/contact/',
@@ -51,7 +56,6 @@
 			data: JSON.stringify( data ),
 			dataType: 'json',
 		} ).then(function( response ) {
-			console.log( response );
 			location.reload();
 		} );
 	});
@@ -59,7 +63,7 @@
 	/**
 	 * Disables right click of images.
 	 */
-	$( 'figure div' ).bind( 'contextmenu', function( e ) {
+	$( document ).on( 'contextmenu', 'figure div, #swipebox-slider img', function( e ) {
 		return false;
 	});
 

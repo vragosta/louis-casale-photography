@@ -46,7 +46,7 @@ class WP_REST_Contact extends WP_REST_Controller {
 			return new WP_REST_Response( 'There was an error with the request.', 500 );
 		endif;
 
-		$to      = 'louiscasale@me.com';
+		$to      = $sender->_id ? 'vincentpasqualeragosta@gmail.com' : 'louiscasalephotography@gmail.com';
 		$subject = $sender->subject;
 		$message = $sender->message;
 
