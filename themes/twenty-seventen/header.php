@@ -38,7 +38,7 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="<?php echo home_url( '/contact/' ); ?>">Louis Casale</a>
 								<hr />
-								<a class="dropdown-item" href="<?php echo home_url( '/contact?id=developer' ); ?>">Web Developer</a>
+								<a class="dropdown-item" href="<?php echo home_url( '/contact/developer' ); ?>">Web Developer</a>
 							</div>
 						</div>
 					</li>
