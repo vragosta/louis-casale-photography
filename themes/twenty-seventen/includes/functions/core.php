@@ -22,7 +22,6 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'louis_casale_photography_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
-	add_action( 'widgets_init',       $n( 'sidebars' ) );
 }
 
 /**
@@ -163,26 +162,4 @@ function styles() {
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
-}
-
-/**
- * Register sidebars for back-end.
- *
- * @since  0.1.0
- * @uses   __(), register_sidebar()
- * @return void
- */
-function sidebars() {
-	$blog = array(
-		'name'          => __( 'Blog', 'louis_casale_photography_com' ),
-		'id'            => 'blog-sidebar',
-		'description'   => 'Sidebar for the blog template.',
-		'class'         => '',
-		'before_widget' => '<div class="widget-item">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	);
-
-	register_sidebar( $blog );
 }

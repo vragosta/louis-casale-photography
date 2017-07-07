@@ -25,6 +25,20 @@ a:hover {
 	font-size: 20px;
 }
 
+/*--- Helpers ---*/
+a.align-right {
+	float: right;
+}
+
+@media only screen and ( max-width: 768px ) {
+	a.align-right {
+		float: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 /*--- Wrapper Class ---*/
 .container {
 	padding: 40px 0 0 0;
@@ -96,13 +110,9 @@ a:hover {
 	font-size: 16px;
 }
 
-/*.navigation .btn-group.open .dropdown-toggle {
-	box-shadow: none;
-}*/
-
-/*.navigation .open > .dropdown-toggle.btn-default {
-	background: none;
-}*/
+.navigation ul li hr {
+	margin: 5px 0;
+}
 
 .navigation .btn-group .btn {
 	border: none;
@@ -129,6 +139,12 @@ a:hover {
 .navigation .dropdown-menu {
 	padding: 10px 20px;
 	min-width: 180px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation .dropdown-menu {
+		left: -45px;
+	}
 }
 
 @media only screen and ( max-width: 768px ) {

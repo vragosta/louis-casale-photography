@@ -87,7 +87,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
-			<a class="pull-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+			<a class="align-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
 		</div>
 	<?php endif; ?>
 
@@ -107,7 +107,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
-			<a class="pull-right" href="<?php echo home_url( '/blog/' ); ?>">View more posts >></a>
+			<a class="align-right" href="<?php echo home_url( '/blog/' ); ?>">View more posts >></a>
 		</div>
 	<?php endif; ?>
 
