@@ -25,6 +25,20 @@ a:hover {
 	font-size: 20px;
 }
 
+/*--- Helpers ---*/
+a.align-right {
+	float: right;
+}
+
+@media only screen and ( max-width: 768px ) {
+	a.align-right {
+		float: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 /*--- Wrapper Class ---*/
 .container {
 	padding: 40px 0 0 0;
@@ -96,6 +110,43 @@ a:hover {
 	font-size: 16px;
 }
 
+.navigation ul li hr {
+	margin: 5px 0;
+}
+
+.navigation .btn-group .btn {
+	border: none;
+	font-weight: 300;
+	font-size: 16px;
+	padding: 0;
+}
+
+.navigation .btn-group .btn:hover,
+.navigation .btn-group .btn:active,
+.navigation .btn-group .btn:focus,
+.navigation .btn-group .btn:active:focus,
+.navigation .open > .dropdown-toggle.btn-default,
+.navigation .btn-group.open .dropdown-toggle {
+	outline: none;
+	box-shadow: none;
+	background: none;
+}
+
+.navigation .btn-group i {
+	margin-left: 5px;
+}
+
+.navigation .dropdown-menu {
+	padding: 10px 20px;
+	min-width: 180px;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.navigation .dropdown-menu {
+		left: -45px;
+	}
+}
+
 @media only screen and ( max-width: 768px ) {
 	.navigation .social {
 		text-align: center;
@@ -136,6 +187,11 @@ a:hover {
 }
 
 /*--- Carousel ---*/
+.carousel .slick-slide:focus,
+.carousel .slick-slide:focus:active {
+	outline: none;
+}
+
 .carousel figure {
 	padding-bottom: 56.25%;
 	position: relative;
