@@ -578,3 +578,9 @@ p.not-set {
 	padding: 40px 0;
 	margin: 0;
 }
+
+.paginate {
+	font-size: 22px;
+	text-align: center;
+	border-bottom: none;
+}
