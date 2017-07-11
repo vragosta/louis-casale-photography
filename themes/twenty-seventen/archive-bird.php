@@ -7,11 +7,13 @@
  */
 
 $family = $_GET['family'];
+$page_num = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 get_header();
 
 $birds = new WP_Query( [
 	'post_type'      => 'bird',
+	'paged'          => $page_num,
 	'posts_per_page' => 16,
 	'orderby'        => 'title',
 	'order'          => 'ASC',
@@ -25,6 +27,8 @@ $birds = new WP_Query( [
 ] );
 
 $count = 0;
+$total = wp_count_posts( 'bird' )->publish;
+$total_pages = ceil( $total / 16 );
 
 ?>
 
@@ -53,6 +57,13 @@ $count = 0;
 	<?php } else { ?>
 			<p class="not-set">There are no birds currently in this family.</p>
 	<?php } ?>
+
+	<div class="paginate row">
+		<?php echo paginate_links( array(
+			'total'    => $total_pages,
+			'current'  => $page_num,
+		) ); ?>
+	</div>
 </section>
 
 <?php get_footer(); ?>
