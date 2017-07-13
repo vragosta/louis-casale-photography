@@ -21,6 +21,9 @@ define( 'LOUIS_CASALE_PHOTOGRAPHY_INC', LOUIS_CASALE_PHOTOGRAPHY_PATH . 'include
 // Include compartmentalized functions.
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/core.php';
 
+// Include helpers functions.
+require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/helpers.php';
+
 // Include various metabox files.
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-bird.php';
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-user.php';

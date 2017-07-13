@@ -22,6 +22,7 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'louis_casale_photography_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'wp_head',            $n( 'louis_casale_photography_meta_descriptions' ) );
 }
 
 /**
@@ -162,4 +163,8 @@ function styles() {
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
+}
+
+function louis_casale_photography_meta_descriptions() { ?>
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>" /><?php
 }
