@@ -85,7 +85,7 @@ function scripts() {
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
 		array( 'jquery' ),
-		STORYCORPS_ORG_VERSION,
+		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION,
 		true
 	);
 
@@ -147,14 +147,14 @@ function styles() {
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
 		array(),
-		STORYCORPS_ORG_VERSION
+		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION
 	);
 
 	wp_register_style(
 		'slick-theme',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
 		array( 'slick' ),
-		STORYCORPS_ORG_VERSION
+		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION
 	);
 
 	wp_enqueue_style(
