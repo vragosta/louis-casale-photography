@@ -11,6 +11,8 @@ $page_num = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 get_header();
 
+global $wp_query;
+
 $birds = new WP_Query( [
 	'post_type'      => 'bird',
 	'paged'          => $page_num,
@@ -27,12 +29,15 @@ $birds = new WP_Query( [
 ] );
 
 $count = 0;
-$total = wp_count_posts( 'bird' )->publish;
+$total = $wp_query->found_posts;
 $total_pages = ceil( $total / 16 );
 
 ?>
 
 <section class="archive content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
+
+	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
+
 	<?php if ( $birds->have_posts() ) { ?>
 		<div class="row">
 			<?php while ( $birds->have_posts() ) { ?>

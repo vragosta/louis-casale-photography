@@ -11,6 +11,9 @@ get_header();
 global $post; ?>
 
 <section class="about content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
+
+	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
+
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'center top' )[0]; ?>
 
