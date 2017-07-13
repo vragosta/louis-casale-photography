@@ -18,6 +18,9 @@ $count = 0;
 ?>
 
 <section class="archive content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
+
+	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
+
 	<?php if ( ! empty( $families ) ) { ?>
 		<div class="row">
 			<?php foreach( $families as $family ) { ?>
