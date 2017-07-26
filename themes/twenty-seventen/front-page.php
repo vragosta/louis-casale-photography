@@ -111,6 +111,9 @@ $about_page_excerpt = $page->post_excerpt; ?>
 		</div>
 	<?php endif; ?>
 
+	<i id="swipebox-prev" class="custom-arrow left ion-chevron-left"></i>
+	<i id="swipebox-next" class="custom-arrow right ion-chevron-right"></i>
+
 </section>
 
 <?php get_footer(); ?>

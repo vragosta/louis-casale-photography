@@ -608,3 +608,27 @@ p.not-set {
 	font-weight: 100;
 	color: #ccc;
 }
+
+#swipebox-bottom-bar {
+	display: none;
+}
+
+.custom-arrow {
+	display: none;
+	font-size: 50px;
+	position: fixed;
+	top: 45% !important;
+	bottom: 0;
+	color: #fff;
+	z-index: 100000 !important;
+	background-image: none !important;
+	background: transparent !important;
+}
+
+.custom-arrow.left {
+	left: 45px;
+}
+
+.custom-arrow.right {
+	right: 45px;
+}
