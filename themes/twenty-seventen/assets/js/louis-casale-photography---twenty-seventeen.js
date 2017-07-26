@@ -67,4 +67,15 @@
 		return false;
 	});
 
+	$( 'body' ).on( 'click', 'a[data-rel=lightbox]', function() {
+		// console.log( 'clicked' );
+		// console.log( $( '#swipebox-slider .slide.current' ) );
+		// console.log( $( '.recent-photographs .recent-item' ).length );
+		$( '.custom-arrow' ).show();
+	});
+
+	// $( document ).on( 'ready', '#swipebox-slider', function() {
+	// 	console.log( 'I appeared' );
+	// });
+
 } )( jQuery );
