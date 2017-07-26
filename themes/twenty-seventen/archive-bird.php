@@ -77,6 +77,9 @@ $total_pages = ceil( $total / 16 );
 		</div>
 	<?php } ?>
 
+	<i id="swipebox-prev" class="custom-arrow left ion-chevron-left"></i>
+	<i id="swipebox-next" class="custom-arrow right ion-chevron-right"></i>
+
 </section>
 
 <?php get_footer(); ?>

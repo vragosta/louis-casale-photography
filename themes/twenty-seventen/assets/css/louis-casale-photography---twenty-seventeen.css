@@ -608,3 +608,60 @@ p.not-set {
 	font-weight: 100;
 	color: #ccc;
 }
+
+/* Swipebox Plugin Overrides */
+
+#swipebox-top-bar {
+	display: flex;
+	align-items: center;
+}
+
+#swipebox-title p {
+	line-height: 1;
+	margin: 0;
+}
+
+#swipebox-bottom-bar {
+	display: none;
+}
+
+.custom-arrow {
+	display: none;
+	font-size: 50px;
+	position: fixed;
+	top: 45% !important;
+	bottom: 0;
+	color: #fff;
+	width: auto !important;
+	z-index: 100000 !important;
+	background-image: none !important;
+	background: transparent !important;
+}
+
+@media only screen and ( max-width: 992px ) {
+	.custom-arrow {
+		top: auto !important;
+		bottom: 25px;
+		font-size: 30px;
+	}
+}
+
+.custom-arrow.left {
+	left: 45px;
+}
+
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.custom-arrow.left {
+		left: 30px;
+	}
+}
+
+.custom-arrow.right {
+	right: 45px;
+}
+
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.custom-arrow.right {
+		right: 30px;
+	}
+}
