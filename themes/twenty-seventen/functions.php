@@ -25,12 +25,7 @@ require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/core.php';
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/helpers.php';
 
 // Include various metabox files.
-require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-bird.php';
-require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-user.php';
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-family.php';
-
-// Include api files.
-require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'api/class-wp-rest-contact.php';
 
 // Run the setup functions.
 LouisCasalePhotography\TwentySeventeen\Core\setup();
