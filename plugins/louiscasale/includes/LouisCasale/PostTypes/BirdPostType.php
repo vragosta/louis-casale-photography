@@ -65,7 +65,6 @@ class BirdPostType extends BasePostType {
 
 	public function get_supported_taxonomies() {
 		return array(
-			CATEGORY_TAXONOMY,
 			FAMILY_TAXONOMY,
 		);
 	}

@@ -18,6 +18,8 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="<?php echo home_url( 'wp-content/themes/twenty-seventeen/assets/images/favicon.ico' ); ?>" type="image/x-icon">
+		<link rel="icon" href="<?php echo home_url( 'wp-content/themes/twenty-seventeen/assets/images/favicon.ico' ); ?>" type="image/x-icon">
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
