@@ -64,7 +64,7 @@ function louiscasale_autorun() {
 
 function louiscasale_autoload_notice() {
 	$class = 'notice notice-error';
-	$message = __( 'Autoload is not setup. Remember to run composer install on the VincentRagosta plugin.', 'louiscasale_com' );
+	$message = __( 'Autoload is not setup. Remember to run composer install on the LouisCasale plugin.', 'louiscasale_com' );
 	printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
 }
 

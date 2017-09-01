@@ -33,7 +33,7 @@ function setup() {
  * @return void
  */
 function louis_casale_photography_setup() {
-	// Add RSS feed links to <head> for posts and comments.
+	# Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
@@ -44,7 +44,7 @@ function louis_casale_photography_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	// Enable support for Post Thumbnails, and declare two sizes.
+	# Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 
 	/**
@@ -59,10 +59,10 @@ function louis_casale_photography_setup() {
 		'caption',
 	) );
 
-	// Add excerpt support to...
+	# Add excerpt support to...
 	add_post_type_support( 'page', 'excerpt' );
 
-	// If set to 'false', the admin bar will not display on front end.
+	# If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
 }
 /**
@@ -85,7 +85,7 @@ function scripts() {
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
 		array( 'jquery' ),
-		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION,
+		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
 		true
 	);
 
@@ -147,14 +147,14 @@ function styles() {
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION
+		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 
 	wp_register_style(
 		'slick-theme',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
 		array( 'slick' ),
-		LOUIS_CASALE_PHOTOGRAPHY_ORG_VERSION
+		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 
 	wp_enqueue_style(

@@ -12,20 +12,20 @@
  * @since   0.1.0
  */
 
-// Useful global constants.
+# Useful global constants.
 define( 'LOUIS_CASALE_PHOTOGRAPHY_VERSION', '0.1.0' );
 define( 'LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL', get_template_directory_uri() );
 define( 'LOUIS_CASALE_PHOTOGRAPHY_PATH', get_template_directory() . '/' );
 define( 'LOUIS_CASALE_PHOTOGRAPHY_INC', LOUIS_CASALE_PHOTOGRAPHY_PATH . 'includes/' );
 
-// Include compartmentalized functions.
+# Include compartmentalized functions.
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/core.php';
 
-// Include helpers functions.
+# Include helpers functions.
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/helpers.php';
 
-// Include various metabox files.
+# Include various metabox files.
 require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-family.php';
 
-// Run the setup functions.
+# Run the setup functions.
 LouisCasalePhotography\TwentySeventeen\Core\setup();

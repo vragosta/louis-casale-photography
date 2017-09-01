@@ -1,9 +1,5 @@
 <?php
 /**
- * TODO
- */
-
-/**
  * Create a new field called 'cover_photo_url'.
  *
  * @since  0.1.0
@@ -22,7 +18,7 @@ function add_options( $term ) {
 add_action( 'family_edit_form_fields', 'add_options' );
 
 /**
- * TODO
+ * Saves custom taxonomy fields.
  *
  * @since  0.1.0
  * @uses   isset(), sanitize_title(), update_term_meta()

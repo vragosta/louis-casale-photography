@@ -1,12 +1,17 @@
 <?php
-
-
+/**
+ * Contact Form HTML
+ *
+ * @package Louis Casale Photography - Twenty Seventeen
+ * @since 0.1.0
+ * @uses louis_casale_photography_breadcrumbs(), is_page()
+ */
 ?>
 
 <section class="contact content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
 	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
-	
+
 	<?php if ( is_page( 'developer' ) ) { ?>
 		<input type="hidden" value="developer" />
 	<?php } ?>
