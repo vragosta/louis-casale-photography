@@ -2,9 +2,11 @@
 /**
  * Template for displaying the bird archive.
  *
- * @package Louis Casale Photography - Twenty Seventeen
- * @since   0.1.0
+ * @package LouisCasale - Twenty Seventeen
+ * @since 0.1.0
  */
+
+namespace LouisCasale;
 
 $family = $_GET['family'];
 $page_num = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
@@ -31,7 +33,7 @@ if ( isset( $family ) ) {
 	];
 }
 
-$birds = new WP_Query( $args );
+$birds = new \WP_Query( $args );
 $count = 0;
 $total = $wp_query->found_posts;
 $total_pages = ceil( $total / 16 );
@@ -40,7 +42,7 @@ $total_pages = ceil( $total / 16 );
 
 <section class="archive content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
-	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
+	<?php louiscasale_breadcrumbs(); ?>
 
 	<?php if ( $birds->have_posts() ) { ?>
 		<div class="row">

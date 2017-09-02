@@ -2,10 +2,11 @@
 /**
  * This file contains the necessary theme configuration functions.
  *
- * @package Louis Casale Photography - Twenty Seventeen
- * @since   0.1.0
+ * @package LouisCasale - Twenty Seventeen
+ * @since 0.1.0
  */
-namespace LouisCasalePhotography\TwentySeventeen\Core;
+
+namespace LouisCasale\Functions\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -19,10 +20,10 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',  $n( 'louis_casale_photography_setup' ) );
+	add_action( 'after_setup_theme',  $n( 'louiscasale_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
-	add_action( 'wp_head',            $n( 'louis_casale_photography_headers' ) );
+	add_action( 'wp_head',            $n( 'louiscasale_headers' ) );
 }
 
 /**
@@ -32,7 +33,7 @@ function setup() {
  * @uses   add_theme_support, set_post_thumbnail_size, add_image_size, and add_post_type_support, show_admin_bar
  * @return void
  */
-function louis_casale_photography_setup() {
+function louiscasale_setup() {
 	# Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -65,6 +66,7 @@ function louis_casale_photography_setup() {
 	# If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
 }
+
 /**
  * Enqueue scripts for front-end.
  *
@@ -90,23 +92,27 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
-		'louis_casale_photography',
+		'louiscasale',
 		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louis-casale-photography---twenty-seventeen.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
 		true
 	);
 
-	wp_localize_script( 'louis_casale_photography', 'LouisCasalePhotography', [
-		'themeUrl' => LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL,
-		'options'  => [
-			'apiUrl'  => home_url( '/wp-json/v1' ),
-			'homeUrl' => home_url(),
-			'nonce'   => wp_create_nonce( 'wp_rest' ),
-		]
-	] );
+	wp_localize_script(
+		'louiscasale',
+		'LouisCasale',
+		array(
+			'themeUrl' => LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL,
+			'options'  => array(
+				'apiUrl'  => home_url( '/wp-json/v1' ),
+				'homeUrl' => home_url(),
+				'nonce'   => wp_create_nonce( 'wp_rest' ),
+			)
+		)
+	);
+}
 
-	}
 /**
  * Enqueue styles for front-end.
  *
@@ -165,14 +171,14 @@ function styles() {
 	);
 
 	wp_enqueue_style(
-		'louis_casale_photography',
+		'louiscasale',
 		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louis-casale-photography---twenty-seventeen.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme', 'fonts' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 }
 
-function louis_casale_photography_headers() { ?>
+function louiscasale_headers() { ?>
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

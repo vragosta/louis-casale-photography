@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header.
  *
- * @package Louis Casale Photography - Twenty Seventen
+ * @package LouisCasale - Twenty Seventen
  * @since 0.1.0
  */
 

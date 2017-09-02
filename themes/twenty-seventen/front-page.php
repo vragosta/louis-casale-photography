@@ -2,8 +2,8 @@
 /**
  * Template for displaying the front page.
  *
- * @package Louis Casale Photography - Twenty Seventeen
- * @since   0.1.0
+ * @package LouisCasale - Twenty Seventeen
+ * @since 0.1.0
  */
 
 namespace LouisCasale;

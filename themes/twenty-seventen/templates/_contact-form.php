@@ -2,38 +2,42 @@
 /**
  * Contact Form HTML
  *
- * @package Louis Casale Photography - Twenty Seventeen
+ * @package LouisCasale - Twenty Seventeen
  * @since 0.1.0
- * @uses louis_casale_photography_breadcrumbs(), is_page()
+ * @uses louiscasale_breadcrumbs(), is_page()
  */
+
+namespace LouisCasale;
+
 ?>
 
 <section class="contact content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
-	<?php \LouisCasalePhotography\TwentySeventeen\Helpers\louis_casale_photography_breadcrumbs(); ?>
+	<?php louiscasale_breadcrumbs(); ?>
 
 	<?php if ( is_page( 'developer' ) ) { ?>
 		<input type="hidden" value="developer" />
 	<?php } ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) { ?>
+		<?php the_post(); ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>
 
-		<?php if ( $image ) : ?>
+		<?php if ( $image ) { ?>
 			<div class="photo-container">
 				<figure class="photo unloaded">
 					<div style="background-image: url( <?php echo esc_attr( $image ); ?> );"></div>
 				</figure>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 
 		<?php $excerpt = get_the_excerpt(); ?>
-		<?php if ( $excerpt ) : ?>
+		<?php if ( $excerpt ) { ?>
 			<div class="excerpt">
 				<?php echo $excerpt; ?>
 				<p class="pull-left">If you'd like to contact me, please fill out the following form...</p>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 
 		<div class="field-container row">
 			<div class="form-group col-md-6">
@@ -69,6 +73,6 @@
 
 		<button class="btn btn-info contact-btn">Submit</button>
 
-	<?php endwhile; ?>
+	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 </section>

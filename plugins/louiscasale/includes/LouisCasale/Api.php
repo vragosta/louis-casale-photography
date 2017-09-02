@@ -24,3 +24,4 @@ function get_plugin() {
 require_once( __DIR__ . '/Api/Bird.php' );
 require_once( __DIR__ . '/Api/Post.php' );
 require_once( __DIR__ . '/Api/Partial.php' );
+require_once( __DIR__ . '/Api/Helpers.php' );

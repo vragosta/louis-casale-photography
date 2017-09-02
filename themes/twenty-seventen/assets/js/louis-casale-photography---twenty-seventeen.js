@@ -1,6 +1,6 @@
 /**
- * Louis Casale Photography - Twenty Seventeen - v0.1.0
- * https://louiscasale.com
+ * LouisCasale - Twenty Seventeen - v0.1.0
+ * https://www.louiscasale.com
  * Copyright (c) 2016; * Licensed GPL-2.0+
  */
 'use strict';
@@ -30,28 +30,28 @@
 	 */
 	$( '.contact-btn' ).click(function() {
 		var _id       = $( 'input[type=hidden]' ).val(),
-				firstname = $( '#firstname' ).val(),
-				lastname  = $( '#lastname' ).val(),
-				email     = $( '#email' ).val(),
-				subject   = $( '#subject' ).val(),
-				message   = $( '#message' ).val(),
-				data      = {
-					'firstname' : firstname,
-					'lastname' : lastname,
-					'email' : email,
-					'subject' : subject,
-					'message' : message
-				};
+			firstname = $( '#firstname' ).val(),
+			lastname  = $( '#lastname' ).val(),
+			email     = $( '#email' ).val(),
+			subject   = $( '#subject' ).val(),
+			message   = $( '#message' ).val(),
+			data      = {
+				'firstname' : firstname,
+				'lastname' : lastname,
+				'email' : email,
+				'subject' : subject,
+				'message' : message
+			};
 
 		if ( _id ) {
 			data['_id'] = _id;
 		}
 
 		$.ajax( {
-			url: LouisCasalePhotography.options.apiUrl  + '/contact/',
+			url: LouisCasale.options.apiUrl  + '/contact/',
 			type: 'post',
 			headers: {
-				'X-WP-Nonce': LouisCasalePhotography.options.nonce
+				'X-WP-Nonce': LouisCasale.options.nonce
 			},
 			data: JSON.stringify( data ),
 			dataType: 'json',
@@ -68,14 +68,7 @@
 	});
 
 	$( 'body' ).on( 'click', 'a[data-rel=lightbox]', function() {
-		// console.log( 'clicked' );
-		// console.log( $( '#swipebox-slider .slide.current' ) );
-		// console.log( $( '.recent-photographs .recent-item' ).length );
 		$( '.custom-arrow' ).show();
 	});
-
-	// $( document ).on( 'ready', '#swipebox-slider', function() {
-	// 	console.log( 'I appeared' );
-	// });
 
 } )( jQuery );

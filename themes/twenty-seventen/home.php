@@ -2,13 +2,15 @@
 /**
  * Template for displaying the blog archive.
  *
- * @package Louis Casale Photography - Twenty Seventeen
- * @since   0.1.0
+ * @package LouisCasale - Twenty Seventeen
+ * @since 0.1.0
  */
+
+namespace LouisCasale;
 
 get_header();
 
-$blog_posts = new WP_Query( [ 'post_type' => 'post' ] ); ?>
+$blog_posts = get_blog_posts(); ?>
 
 <?php if ( $blog_posts->have_posts() ) { ?>
 	<section class="blog content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
