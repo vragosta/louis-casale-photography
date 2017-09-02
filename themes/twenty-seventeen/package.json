@@ -1,0 +1,30 @@
+{
+  "name": "louiscasale---twenty-seventeen",
+  "title": "LouisCasale - Twenty Seventeen",
+  "description": "2016 theme for VincentRagosta.com",
+  "version": "0.1.0",
+  "homepage": "http://www.louiscasale.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vragosta/louiscasale/"
+  },
+  "author": {
+    "name": "Vincent Ragosta",
+    "email": "vincentpasqualeragosta@gmail.com",
+    "url": "http://www.vincentragosta.com"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.0",
+    "glob": "~5.0.15",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.6.0",
+    "load-grunt-config": "~0.17.2",
+    "load-grunt-tasks": "^3.3.0"
+  },
+  "keywords": []
+}

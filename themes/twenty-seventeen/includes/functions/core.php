@@ -93,7 +93,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louis-casale-photography---twenty-seventeen.js",
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louiscasale---twenty-seventeen.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
 		true
@@ -172,7 +172,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louis-casale-photography---twenty-seventeen.css",
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louiscasale---twenty-seventeen.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme', 'fonts' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
