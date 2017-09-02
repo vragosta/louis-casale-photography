@@ -85,9 +85,9 @@ function scripts() {
 
 	wp_register_script(
 		'bootstrap',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
+		LOUISCASALE_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
 		array( 'jquery' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
+		LOUISCASALE_VERSION,
 		true
 	);
 
@@ -95,15 +95,15 @@ function scripts() {
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
 		array( 'jquery' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
+		LOUISCASALE_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louiscasale---twenty-seventeen{$min}.js",
+		LOUISCASALE_TEMPLATE_URL . "/assets/js/louiscasale---twenty-seventeen{$min}.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
+		LOUISCASALE_VERSION,
 		true
 	);
 
@@ -111,7 +111,7 @@ function scripts() {
 		'louiscasale',
 		'LouisCasale',
 		array(
-			'themeUrl' => LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL,
+			'themeUrl' => LOUISCASALE_TEMPLATE_URL,
 			'options'  => array(
 				'apiUrl'  => home_url( '/wp-json/v1' ),
 				'homeUrl' => home_url(),
@@ -141,56 +141,56 @@ function styles() {
 		'fonts',
 		'https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,600i',
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'fontawesome',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
+		LOUISCASALE_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'ionicons',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
+		LOUISCASALE_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'bootstrap',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
+		LOUISCASALE_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
 		array( 'fontawesome' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'sanitize',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
+		LOUISCASALE_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'slick',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
 		array(),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_register_style(
 		'slick-theme',
 		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
 		array( 'slick' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 
 	wp_enqueue_style(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louiscasale---twenty-seventeen{$min}.css",
+		LOUISCASALE_TEMPLATE_URL . "/assets/css/louiscasale---twenty-seventeen{$min}.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme', 'fonts' ),
-		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+		LOUISCASALE_VERSION
 	);
 }
 

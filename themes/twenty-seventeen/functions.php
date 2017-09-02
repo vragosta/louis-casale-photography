@@ -13,16 +13,16 @@
  */
 
 # Useful global constants.
-define( 'LOUIS_CASALE_PHOTOGRAPHY_VERSION', '0.1.0' );
-define( 'LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL', get_template_directory_uri() );
-define( 'LOUIS_CASALE_PHOTOGRAPHY_PATH', get_template_directory() . '/' );
-define( 'LOUIS_CASALE_PHOTOGRAPHY_INC', LOUIS_CASALE_PHOTOGRAPHY_PATH . 'includes/' );
+define( 'LOUISCASALE_VERSION', '0.1.0' );
+define( 'LOUISCASALE_TEMPLATE_URL', get_template_directory_uri() );
+define( 'LOUISCASALE_PATH', get_template_directory() . '/' );
+define( 'LOUISCASALE_INC', LOUISCASALE_PATH . 'includes/' );
 
 # Include compartmentalized functions.
-require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'functions/core.php';
+require_once LOUISCASALE_INC . 'functions/core.php';
 
 # Include various metabox files.
-require_once LOUIS_CASALE_PHOTOGRAPHY_INC . 'metaboxes/metabox-family.php';
+require_once LOUISCASALE_INC . 'metaboxes/metabox-family.php';
 
 # Run the setup functions.
 LouisCasale\Functions\Core\setup();
