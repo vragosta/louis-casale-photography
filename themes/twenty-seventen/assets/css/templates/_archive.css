@@ -1,0 +1,42 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Archive CSS
+ */
+
+figure.photo {
+	padding-bottom: 100%;
+	position: relative;
+	transition: opacity 0.8s ease-in-out;
+}
+
+figure.unloaded {
+	opacity: 0;
+}
+
+figure.photo div:hover {
+	opacity: 0.9;
+}
+
+.archive .row {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 20px 0;
+}
+
+.archive .row:first-child {
+	padding: 0 0 20px 0;
+}
+
+.archive .row:last-child {
+	border-bottom: none;
+}
+
+.archive-item h5 {
+	text-align: center;
+	transition: opacity 0.8s ease-in-out;
+	margin-bottom: 0;
+}
+
+.archive-item h5.unloaded {
+	opacity: 0;
+}

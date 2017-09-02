@@ -116,6 +116,13 @@ function scripts() {
  */
 function styles() {
 	wp_register_style(
+		'fonts',
+		'https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,600i',
+		array(),
+		LOUIS_CASALE_PHOTOGRAPHY_VERSION
+	);
+
+	wp_register_style(
 		'fontawesome',
 		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
 		array(),
@@ -160,7 +167,7 @@ function styles() {
 	wp_enqueue_style(
 		'louis_casale_photography',
 		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louis-casale-photography---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme', 'fonts' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
 }

@@ -1,0 +1,174 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Front Page CSS
+ */
+
+.home div > h2 {
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	font-size: 20px;
+}
+
+/*--- About Excerpt ---*/
+
+.about-excerpt {
+	padding: 40px 0;
+}
+
+.about-excerpt p {
+	font-family: Montserrat, 'sans-serif';
+	font-size: 14px;
+	line-height: 1.8;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+.about-excerpt p:last-child {
+	margin-bottom: 0;
+}
+
+/*--- Inline navigation panel ---*/
+
+.inline-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 40px 20px;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.inline-navigation {
+		flex-direction: column;
+	}
+}
+
+.inline-navigation h2 {
+	display: flex;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.inline-navigation h2 {
+		margin: 10px 0;
+	}
+}
+
+.inline-navigation a {
+	color: #333;
+	font-size: 20px;
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	transition: 0.2s color ease-in-out;
+}
+
+.inline-navigation a:hover {
+	text-decoration: none;
+	color: #858585;
+}
+
+.vertical-line {
+	border-left: 1px solid #ccc;
+	height: 20px;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.vertical-line {
+		display: none;
+	}
+}
+
+/*--- Recent photographs section ---*/
+
+.recent-photographs {
+	border-bottom: 1px solid #ccc;
+	padding: 40px 0;
+}
+
+.recent-photographs h2 {
+	margin: 0;
+}
+
+.recent-photographs .row {
+	margin: 40px 0;
+}
+
+@media only screen and ( min-width: 992px ) {
+	.recent-photographs .recent-item:first-child {
+		padding: 0 20px 0 0;
+	}
+
+	.recent-photographs .recent-item:last-child {
+		padding: 0 0 0 20px;
+	}
+}
+
+@media only screen and ( max-width: 991px ) {
+	.recent-photographs .recent-item {
+		padding: 0;
+	}
+
+	.recent-photographs .recent-item:first-child {
+		margin: 0 0 40px 0;
+	}
+}
+
+.recent-photographs h5 {
+	text-align: center;
+}
+
+/*--- Latest Posts ---*/
+
+.latest-posts {
+	padding: 40px 0;
+}
+
+.latest-posts h2 {
+	margin: 0;
+}
+
+.latest-posts .row {
+	margin: 40px 0;
+}
+
+@media only screen and ( min-width: 992px ) {
+	.latest-posts .blog-post:first-child {
+		padding: 0 20px 0 0;
+	}
+
+	.latest-posts .blog-post:last-child {
+		padding: 0 0 0 20px;
+	}
+}
+
+@media only screen and ( max-width: 991px ) {
+	.latest-posts .blog-post {
+		padding: 0;
+	}
+
+	.latest-posts .blog-post:first-child {
+		margin: 0 0 40px 0;
+	}
+}
+
+.latest-posts .blog-post h4 {
+	margin: 0;
+}
+
+.latest-posts .blog-post h4 a {
+	font-size: 22px;
+	color: #333;
+}
+
+.latest-posts .blog-post span {
+	font-style: italic;
+}
+
+.latest-posts .blog-post p {
+	word-break: break-word;
+	hyphens: auto;
+	margin: 10px 0 0 0;
+	line-height: 1.8;
+}
