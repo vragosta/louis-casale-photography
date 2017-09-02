@@ -75,6 +75,14 @@ function louiscasale_setup() {
  * @return void
  */
 function scripts() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_script_debug
+	 */
+	$debug = apply_filters( 'louiscasale_script_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_register_script(
 		'bootstrap',
 		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
@@ -93,7 +101,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louiscasale---twenty-seventeen.js",
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/js/louiscasale---twenty-seventeen{$min}.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION,
 		true
@@ -121,6 +129,14 @@ function scripts() {
  * @return void
  */
 function styles() {
+	/**
+	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
+	 *
+	 * @param bool vincentragosta_style_debug
+	 */
+	$debug = apply_filters( 'louiscasale_style_debug', false );
+	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
 	wp_register_style(
 		'fonts',
 		'https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,600,600i',
@@ -172,7 +188,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'louiscasale',
-		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louiscasale---twenty-seventeen.css",
+		LOUIS_CASALE_PHOTOGRAPHY_TEMPLATE_URL . "/assets/css/louiscasale---twenty-seventeen{$min}.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'slick-theme', 'fonts' ),
 		LOUIS_CASALE_PHOTOGRAPHY_VERSION
 	);
