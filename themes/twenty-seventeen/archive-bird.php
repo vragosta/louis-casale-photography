@@ -31,13 +31,19 @@ $count = 0;
 				<?php } ?>
 
 				<div class="archive-item col-xs-12 col-sm-6 col-md-3">
-					<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' )[0]; ?>" data-rel="lightbox" title="<?php the_excerpt(); ?>">
+					<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'full' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 						<figure class="photo unloaded">
 							<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
 						</figure>
 					</a>
 					<h5 class="unloaded"><?php the_title(); ?></h5>
 				</div>
+
+				<?php if ( get_the_excerpt() ) { ?>
+					<div class="custom-caption unloaded" data-id="<?php echo $post->ID; ?>">
+						<?php the_excerpt(); ?>
+					</div>
+				<?php } ?>
 				<?php $count++; ?>
 			<?php } ?>
 			<?php wp_reset_postdata(); ?>

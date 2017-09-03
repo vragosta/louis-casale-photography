@@ -111,13 +111,13 @@
 			$( 'body' ).on( 'mouseenter', '#swipebox-overlay img', function() {
 				var id = $( '.custom-arrow' ).attr( 'data-id' );
 
-				$( '.custom-caption[data-id=' + id + ']' ).show();
+				$( '.custom-caption[data-id=' + id + ']' ).removeClass( 'unloaded' );
 			});
 
 			$( 'body' ).on( 'mouseleave', '#swipebox-overlay img', function() {
 				var id = $( '.custom-arrow' ).attr( 'data-id' );
 
-				$( '.custom-caption[data-id=' + id + ']' ).hide();
+				$( '.custom-caption[data-id=' + id + ']' ).addClass( 'unloaded' );
 			});
 		},
 

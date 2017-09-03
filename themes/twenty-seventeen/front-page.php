@@ -62,7 +62,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 						<h5 class="unloaded"><?php the_title(); ?></h5>
 					</div>
 
-					<div class="custom-caption" data-id="<?php echo $post->ID; ?>">
+					<div class="custom-caption unloaded" data-id="<?php echo $post->ID; ?>">
 						<?php the_excerpt(); ?>
 					</div>
 				<?php } ?>
