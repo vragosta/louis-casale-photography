@@ -1,0 +1,38 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Site Core Components CSS
+ */
+
+body {
+	font-family: Montserrat, 'sans-serif';
+	color: #333;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:active:focus {
+	text-decoration: none;
+	transition: 0.3s color ease-in-out;
+}
+
+a:hover {
+	color: #858585;
+}
+
+.container {
+	padding: 40px 0 0 0;
+}
+
+.content > div {
+	overflow: hidden;
+}
+
+.content a {
+	color: #858585;
+	transition: 0.3s color ease-in-out;
+}
+
+.content a:hover {
+	color: #333;
+}

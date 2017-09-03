@@ -1,0 +1,44 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Blog CSS
+ */
+
+.blog-item {
+	padding: 40px 0;
+}
+
+.blog-item:first-child {
+	padding: 0 0 40px 0;
+}
+
+.blog-item:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+
+.blog-item figure {
+	margin-bottom: 20px;
+}
+
+.blog-item h1 {
+	margin: 0;
+}
+
+.blog-item h1 a {
+	color: #333;
+	font-size: 22px;
+	font-family: Montserrat, 'sans-serif';
+	font-weight: 300;
+	transition: 0.2s color ease-in-out;
+}
+
+.blog-item h1 a:hover {
+	text-decoration: none;
+	color: #858585;
+}
+
+.blog-item p {
+	margin: 20px 0 0 0;
+	word-break: break-word;
+	hyphens: auto;
+	line-height: 1.8;
+}

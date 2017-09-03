@@ -1,0 +1,86 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Swipebox CSS
+ */
+
+#swipebox-top-bar {
+	display: flex;
+	align-items: center;
+}
+
+#swipebox-title p {
+	line-height: 1;
+	margin: 0;
+}
+
+#swipebox-bottom-bar {
+	display: none;
+}
+
+.custom-arrow {
+	display: none;
+	font-size: 50px;
+	position: fixed;
+	top: 45% !important;
+	bottom: 0;
+	color: #fff;
+	width: auto !important;
+	z-index: 100000 !important;
+	background-image: none !important;
+	background: transparent !important;
+}
+
+@media only screen and ( max-width: 992px ) {
+	.custom-arrow {
+		top: auto !important;
+		bottom: 25px;
+		font-size: 30px;
+	}
+}
+
+.custom-arrow.left {
+	left: 45px;
+}
+
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.custom-arrow.left {
+		left: 30px;
+	}
+}
+
+.custom-arrow.right {
+	right: 45px;
+}
+
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.custom-arrow.right {
+		right: 30px;
+	}
+}
+
+#swipebox-top-bar {
+	display: none !important;
+}
+
+.custom-caption {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100000;
+	padding: 20px 50px 20px 10px;
+	background: #0d0d0d;
+	transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.custom-caption.unloaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.custom-caption p {
+	color: #fff;
+	text-align: center;
+	margin: 0 !important;
+	line-height: 1;
+}

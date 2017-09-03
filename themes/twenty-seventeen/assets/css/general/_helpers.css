@@ -1,0 +1,23 @@
+/**
+ * LouisCasale - Twenty Seventeen
+ * Helper CSS
+ */
+
+a.align-right {
+	float: right;
+}
+
+@media only screen and ( max-width: 768px ) {
+	a.align-right {
+		float: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+p.not-set {
+	text-align: center;
+	padding: 40px 0;
+	margin: 0;
+}
