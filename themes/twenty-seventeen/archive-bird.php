@@ -15,13 +15,13 @@ get_header();
 
 global $wp_query;
 
-$args = [
+$args = array(
 	'post_type' => 'bird',
 	'paged' => $page_num,
 	'posts_per_page' => 16,
 	'orderby' => 'title',
 	'order' => 'ASC'
-];
+);
 
 if ( isset( $family ) ) {
 	$args['tax_query'] = [

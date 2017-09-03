@@ -7,31 +7,38 @@ function get_bird_finder( $post_id ) {
 }
 
 function get_featured_birds() {
-	$birds = new \WP_Query( [
+	$birds = new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
 		'posts_per_page' => 6,
-		'meta_query'     => [
-			[
+		'meta_query'     => array(
+			array(
 				'key'     => 'featured',
 				'value'   => true,
 				'compare' => '='
-			]
-		]
-	] );
+			)
+		)
+	) );
 
 	if ( $birds->post_count === 0 ) {
-		$birds = new \WP_Query( [
+		$birds = new \WP_Query( array(
 			'post_type'      => 'bird',
 			'posts_per_page' => 6
-		] );
+		) );
 	}
 
 	return $birds;
 }
 
 function get_recent_birds() {
-	return new \WP_Query( [
+	return new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
 		'posts_per_page' => 2
-	] );
+	) );
+}
+
+function get_bird_families() {
+	return get_terms( array(
+		'taxonomy' => 'family',
+		'hide_empty' => false,
+	) );
 }

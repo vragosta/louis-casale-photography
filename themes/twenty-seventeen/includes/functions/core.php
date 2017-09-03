@@ -78,7 +78,7 @@ function scripts() {
 	/**
 	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
 	 *
-	 * @param bool vincentragosta_script_debug
+	 * @param bool louiscasale_script_debug
 	 */
 	$debug = apply_filters( 'louiscasale_script_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
@@ -132,7 +132,7 @@ function styles() {
 	/**
 	 * Flag whether to enable loading uncompressed/debugging assets. Default false.
 	 *
-	 * @param bool vincentragosta_style_debug
+	 * @param bool louiscasale_style_debug
 	 */
 	$debug = apply_filters( 'louiscasale_style_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';

@@ -10,10 +10,7 @@ namespace LouisCasale;
 
 get_header();
 
-$families = get_terms( [
-	'taxonomy' => 'family',
-	'hide_empty' => false,
-] );
+$families = get_bird_families();
 
 $count = 0;
 
