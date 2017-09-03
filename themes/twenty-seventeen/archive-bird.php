@@ -8,35 +8,12 @@
 
 namespace LouisCasale;
 
-$family = $_GET['family'];
-$page_num = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-
 get_header();
 
 global $wp_query;
-
-$args = array(
-	'post_type' => 'bird',
-	'paged' => $page_num,
-	'posts_per_page' => 16,
-	'orderby' => 'title',
-	'order' => 'ASC'
-);
-
-if ( isset( $family ) ) {
-	$args['tax_query'] = [
-		[
-			'taxonomy' => 'family',
-			'field'    => 'slug',
-			'terms'    => [ $family ]
-		]
-	];
-}
-
-$birds = new \WP_Query( $args );
+$family = $_GET['family'];
+$birds = get_birds_by_family( $family );
 $count = 0;
-$total = $wp_query->found_posts;
-$total_pages = ceil( $total / 16 );
 
 ?>
 
@@ -68,15 +45,6 @@ $total_pages = ceil( $total / 16 );
 
 	<?php } else { ?>
 			<p class="not-set">There are no published birds.</p>
-	<?php } ?>
-
-	<?php if ( $total > 16 ) { ?>
-		<div class="paginate row">
-			<?php echo paginate_links( array(
-				'total'    => $total_pages,
-				'current'  => $page_num,
-			) ); ?>
-		</div>
 	<?php } ?>
 
 	<i id="swipebox-prev" class="custom-arrow left ion-chevron-left"></i>

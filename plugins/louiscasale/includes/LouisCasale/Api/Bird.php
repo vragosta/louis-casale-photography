@@ -21,7 +21,7 @@ function get_featured_birds() {
 
 	if ( $birds->post_count === 0 ) {
 		$birds = new \WP_Query( array(
-			'post_type'      => 'bird',
+			'post_type'      => BIRD_POST_TYPE,
 			'posts_per_page' => 6
 		) );
 	}
@@ -41,4 +41,25 @@ function get_bird_families() {
 		'taxonomy' => 'family',
 		'hide_empty' => false,
 	) );
+}
+
+function get_birds_by_family( $family ) {
+	$args = array(
+		'post_type' => BIRD_POST_TYPE,
+		'posts_per_page' => -1,
+		'orderby' => 'title',
+		'order' => 'ASC'
+	);
+
+	if ( isset( $family ) ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'family',
+				'field'    => 'slug',
+				'terms'    => [ $family ]
+			)
+		);
+	}
+
+	return new \WP_Query( $args );
 }
