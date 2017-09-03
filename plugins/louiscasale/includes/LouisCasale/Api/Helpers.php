@@ -243,6 +243,6 @@ function louiscasale_breadcrumbs() {
 
 }
 
-function get_featured_image( $id ) {
-	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'center top' )[0];
+function get_featured_image( $id, $size ) {
+	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), $size )[0];
 }

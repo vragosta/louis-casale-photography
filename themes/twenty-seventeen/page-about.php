@@ -18,7 +18,7 @@ global $post; ?>
 
 	<?php while ( have_posts() ) { ?>
 		<?php the_post(); ?>
-		<?php $image = get_featured_image( $id ); ?>
+		<?php $image = get_featured_image( $id, 'large' ); ?>
 
 		<?php if ( $image ) { ?>
 			<div class="photo-container">

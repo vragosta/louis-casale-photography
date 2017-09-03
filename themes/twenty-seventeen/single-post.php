@@ -15,7 +15,7 @@ global $post; ?>
 <section class="col-xs-12 col-sm-offset-3 col-sm-9">
 	<?php while ( have_posts() ) { ?>
 		<?php the_post(); ?>
-		<?php $image = get_featured_image( $id ); ?>
+		<?php $image = get_featured_image( $id, 'large' ); ?>
 		<div class="blog-item">
 			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 			<span><?php echo date_format( date_create( get_the_date() ), 'F jS, Y' ); ?></span>
