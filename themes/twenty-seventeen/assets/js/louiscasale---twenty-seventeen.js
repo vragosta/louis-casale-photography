@@ -7,68 +7,128 @@
 
 ( function( $ ) {
 
-	/**
-	 * Carousel settings.
-	 */
-	$( '.carousel.main' ).slick( {
-		infinite: true,
-		slidesToShow: 1,
-		autoplay: true,
-		autoplaySpeed: 3000
-	} );
+	var louiscasale = {
 
-	/**
-	 * Fade in effect for images and titles on page load.
-	 */
-	if ( $( '.unloaded' ).length ) {
-		$( 'figure.unloaded' ).removeClass( 'unloaded' );
-		$( 'h5.unloaded' ).removeClass( 'unloaded' );
-	}
+		/**
+		 * Declare carousel settings.
+		 *
+		 * @since 0.1.0
+		 * @uses slick()
+		 * @return void
+		 */
+		setCarouselSettings: function() {
+			$( '.carousel.main' ).slick( {
+				infinite: true,
+				slidesToShow: 1,
+				autoplay: true,
+				autoplaySpeed: 3000
+			} );
+		},
 
-	/**
-	 * Sends contact information to contact endpoint for processing.
-	 */
-	$( '.contact-btn' ).click(function() {
-		var _id       = $( 'input[type=hidden]' ).val(),
-			firstname = $( '#firstname' ).val(),
-			lastname  = $( '#lastname' ).val(),
-			email     = $( '#email' ).val(),
-			subject   = $( '#subject' ).val(),
-			message   = $( '#message' ).val(),
-			data      = {
-				'firstname' : firstname,
-				'lastname' : lastname,
-				'email' : email,
-				'subject' : subject,
-				'message' : message
-			};
+		/**
+		 * Fade in effect for images and titles on page load.
+		 *
+		 * @since 0.1.0
+		 * @uses removeClass()
+		 * @return void
+		 */
+		fadeInEffect: function() {
+			if ( $( '.unloaded' ).length ) {
+				$( 'figure.unloaded' ).removeClass( 'unloaded' );
+				$( 'h5.unloaded' ).removeClass( 'unloaded' );
+			}
+		},
 
-		if ( _id ) {
-			data['_id'] = _id;
+		/**
+		 * Sends contact information to contact endpoint for processing.
+		 *
+		 * @since 0.1.0
+		 * @uses click(), val(), ajax(), stringify()
+		 * @return void
+		 */
+		sendContactInformation: function() {
+			$( '.contact-btn' ).click(function() {
+				var _id       = $( 'input[type=hidden]' ).val(),
+					firstname = $( '#firstname' ).val(),
+					lastname  = $( '#lastname' ).val(),
+					email     = $( '#email' ).val(),
+					subject   = $( '#subject' ).val(),
+					message   = $( '#message' ).val(),
+					data      = {
+						'firstname' : firstname,
+						'lastname' : lastname,
+						'email' : email,
+						'subject' : subject,
+						'message' : message
+					};
+
+				if ( _id ) {
+					data['_id'] = _id;
+				}
+
+				$.ajax( {
+					url: LouisCasale.options.apiUrl  + '/contact/',
+					type: 'post',
+					headers: {
+						'X-WP-Nonce': LouisCasale.options.nonce
+					},
+					data: JSON.stringify( data ),
+					dataType: 'json',
+				} ).then(function( response ) {
+					location.reload();
+				} );
+			});
+		},
+
+		/**
+		 * Disables right click of images.
+		 *
+		 * @since 0.1.0
+		 * @uses on()
+		 * @return void
+		 */
+		disableRightClick: function () {
+			$( document ).on( 'contextmenu', 'figure div, #swipebox-slider img', function( e ) {
+				return false;
+			});
+		},
+
+		/**
+		 * Custom swipebox functionality.
+		 *
+		 * @since 0.1.0
+		 * @uses on(), show()
+		 * @return void
+		 */
+		customSwipeboxFunctionality: function () {
+			$( 'body' ).on( 'click', 'a[data-rel=lightbox]', function() {
+				$( '.custom-arrow' ).show();
+			});
+		},
+
+		/**
+		 * LouisCasale class initializer.
+		 *
+		 * @since 0.1.0
+		 * @uses setCarouselSettings(), fadeInEffect(), sendContactInformation(),
+		 *       disableRightClick(), customSwipeboxFunctionality()
+		 * @return void
+		 */
+		init: function() {
+			this.setCarouselSettings();
+			this.fadeInEffect();
+			this.sendContactInformation();
+			this.disableRightClick();
+			this.customSwipeboxFunctionality();
 		}
 
-		$.ajax( {
-			url: LouisCasale.options.apiUrl  + '/contact/',
-			type: 'post',
-			headers: {
-				'X-WP-Nonce': LouisCasale.options.nonce
-			},
-			data: JSON.stringify( data ),
-			dataType: 'json',
-		} ).then(function( response ) {
-			location.reload();
-		} );
-	});
+	};
 
-	/**
-	 * Disables right click of images.
-	 */
-	$( document ).on( 'contextmenu', 'figure div, #swipebox-slider img', function( e ) {
-		return false;
-	});
+	jQuery( document ).ready( function() {
 
-	$( 'body' ).on( 'click', 'a[data-rel=lightbox]', function() {
-		$( '.custom-arrow' ).show();
-	});
+		// Initialize the louiscasale class.
+		louiscasale.init();
+
+	} );
 
 } )( jQuery );
