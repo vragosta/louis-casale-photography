@@ -18,7 +18,7 @@ global $post; ?>
 
 	<?php while ( have_posts() ) { ?>
 		<?php the_post(); ?>
-		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'center top' )[0]; ?>
+		<?php $image = get_featured_image( $id ); ?>
 
 		<?php if ( $image ) { ?>
 			<div class="photo-container">
