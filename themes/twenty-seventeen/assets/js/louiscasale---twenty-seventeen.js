@@ -102,7 +102,22 @@
 		 */
 		customSwipeboxFunctionality: function () {
 			$( 'body' ).on( 'click', 'a[data-rel=lightbox]', function() {
+				var id = $( this ).data( 'id' );
+
 				$( '.custom-arrow' ).show();
+				$( '.custom-arrow' ).attr( 'data-id', id );
+			});
+
+			$( 'body' ).on( 'mouseenter', '#swipebox-overlay img', function() {
+				var id = $( '.custom-arrow' ).attr( 'data-id' );
+
+				$( '.custom-caption[data-id=' + id + ']' ).show();
+			});
+
+			$( 'body' ).on( 'mouseleave', '#swipebox-overlay img', function() {
+				var id = $( '.custom-arrow' ).attr( 'data-id' );
+
+				$( '.custom-caption[data-id=' + id + ']' ).hide();
 			});
 		},
 

@@ -57,3 +57,22 @@
 		right: 30px;
 	}
 }
+
+#swipebox-top-bar {
+	display: none !important;
+}
+
+.custom-caption {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100000;
+	padding: 10px 50px 10px 10px;
+}
+
+.custom-caption p {
+	color: #fff;
+	text-align: center;
+}
