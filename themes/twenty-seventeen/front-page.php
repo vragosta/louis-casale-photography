@@ -54,7 +54,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 				<?php while ( $recent_birds->have_posts() ) { ?>
 					<?php $recent_birds->the_post(); ?>
 					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
-						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
+						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
 								<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
 							</figure>
