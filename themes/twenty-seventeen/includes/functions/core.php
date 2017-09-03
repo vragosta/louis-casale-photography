@@ -80,7 +80,7 @@ function scripts() {
 	 *
 	 * @param bool louiscasale_script_debug
 	 */
-	$debug = apply_filters( 'louiscasale_script_debug', true );
+	$debug = apply_filters( 'louiscasale_script_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_script(
@@ -134,7 +134,7 @@ function styles() {
 	 *
 	 * @param bool louiscasale_style_debug
 	 */
-	$debug = apply_filters( 'louiscasale_style_debug', true );
+	$debug = apply_filters( 'louiscasale_style_debug', false );
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_register_style(
