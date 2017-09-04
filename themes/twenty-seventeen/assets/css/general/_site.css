@@ -8,6 +8,10 @@ body {
 	color: #333;
 }
 
+a {
+	cursor: pointer;
+}
+
 a:hover,
 a:focus,
 a:active,

@@ -29,9 +29,16 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 				<ul>
 					<li><a href="<?php echo home_url(); ?>">Home</a></li>
 					<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
-					<li><a href="<?php echo home_url( '/gallery/' ); ?>">Bird Gallery</a></li>
+					<li><a name="galleries">Galleries</a></li>
+					<ul class="galleries">
+						<li><a>Recent Additions</a></li>
+						<li><a>Personal Favorites</a></li>
+						<li><a>Birds by Family</a></li>
+						<li><a>All Birds</a></li>
+					</ul>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
-					<li>
+					<li><a>Contact</a></li>
+					<!-- <li>
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Contact
@@ -43,7 +50,7 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 								<a class="dropdown-item" href="<?php echo home_url( '/contact/developer' ); ?>">Web Developer</a>
 							</div>
 						</div>
-					</li>
+					</li> -->
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>
 					<div class="social">

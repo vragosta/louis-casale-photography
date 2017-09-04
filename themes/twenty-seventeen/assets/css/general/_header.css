@@ -54,7 +54,8 @@
 }
 
 .navigation ul li {
-	margin: 20px 0;
+	/*margin: 20px 0;*/
+	margin: 0 0 20px;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -68,41 +69,22 @@
 	font-size: 16px;
 }
 
-.navigation ul li hr {
-	margin: 5px 0;
+.navigation .galleries {
+	height: 0px;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.05s height ease-in-out, 0.05s opacity ease-in-out, 0.05s visibility ease-in-out;
 }
 
-.navigation .btn-group .btn {
-	border: none;
-	font-weight: 300;
-	font-size: 16px;
-	padding: 0;
+.navigation .galleries.display {
+	height: 88px;
+	opacity: 1;
+	visibility: visible;
+	margin: 0 0 20px;
 }
 
-.navigation .btn-group .btn:hover,
-.navigation .btn-group .btn:active,
-.navigation .btn-group .btn:focus,
-.navigation .btn-group .btn:active:focus,
-.navigation .open > .dropdown-toggle.btn-default,
-.navigation .btn-group.open .dropdown-toggle {
-	outline: none;
-	box-shadow: none;
-	background: none;
-}
-
-.navigation .btn-group i {
-	margin-left: 5px;
-}
-
-.navigation .dropdown-menu {
-	padding: 10px 20px;
-	min-width: 180px;
-}
-
-@media only screen and ( max-width: 768px ) {
-	.navigation .dropdown-menu {
-		left: -45px;
-	}
+.navigation .galleries li {
+	margin: 0 0 0 10px;;
 }
 
 @media only screen and ( max-width: 768px ) {

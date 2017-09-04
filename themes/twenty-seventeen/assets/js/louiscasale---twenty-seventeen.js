@@ -128,6 +128,21 @@
 		},
 
 		/**
+		 *
+		 *
+		 *
+		 */
+		pushdownMenu: function() {
+			$( 'body' ).on( 'click', 'a[name=galleries]', function() {
+				if ( $( '.galleries' ).hasClass( 'display' ) ) {
+					$( '.galleries' ).removeClass( 'display' );
+				} else {
+					$( '.galleries' ).addClass( 'display' );
+				}
+			});
+		},
+
+		/**
 		 * LouisCasale class initializer.
 		 *
 		 * @since 0.1.0
@@ -141,6 +156,7 @@
 			this.sendContactInformation();
 			this.disableRightClick();
 			this.customSwipeboxFunctionality();
+			this.pushdownMenu();
 		}
 
 	};

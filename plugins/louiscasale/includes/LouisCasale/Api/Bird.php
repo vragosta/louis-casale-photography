@@ -12,7 +12,7 @@ function get_featured_birds() {
 		'posts_per_page' => 6,
 		'meta_query'     => array(
 			array(
-				'key'     => 'featured',
+				'key'     => '_featured',
 				'value'   => true,
 				'compare' => '='
 			)
