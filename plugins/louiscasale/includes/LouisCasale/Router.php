@@ -71,7 +71,7 @@ class Router {
 	public $routes;
 
 	public function get_version() {
-		return '1.0.1';
+		return '1.0.6';
 	}
 
 	public function register() {
@@ -87,7 +87,6 @@ class Router {
 		$match = $this->match();
 
 		if ( $match ) {
-
 			$matched_template = $this->get_template( $match );
 
 			if ( ! empty( $matched_template ) && file_exists( $matched_template ) ) {
@@ -105,7 +104,7 @@ class Router {
 
 		switch ( $route_name ) {
 
-			case 'birds/family':
+			case 'birds/families':
 				$template_file = 'bird-families.php';
 				break;
 
@@ -162,14 +161,14 @@ class Router {
 
 			/*
 			 * Bird Families Route
-			 * Birds Families : /birds/families
+			 * Birds Families : /families/
 			 */
 			array(
-				'birds/family',
-				'^birds/families/?$',
+				'birds/families',
+				'^families/?$',
 				array(
 					'bird_families' => true,
-				)
+				),
 			),
 
 		);
@@ -202,7 +201,6 @@ class Router {
 			}
 
 			$wp->add_query_var( 'route_id' );
-
 			$redirect_params['route_id'] = $index + 1;
 
 			add_rewrite_rule(

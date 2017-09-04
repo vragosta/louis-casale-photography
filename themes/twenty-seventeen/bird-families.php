@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the bird archive.
+ * Template for displaying the 'Birds by family' archive.
  *
  * @package LouisCasale - Twenty Seventeen
  * @since 0.1.0

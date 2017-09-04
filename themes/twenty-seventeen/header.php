@@ -31,8 +31,8 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 					<li><a name="galleries">Galleries</a></li>
 					<ul class="galleries">
 						<li><a href="">Recent Additions</a></li>
-						<li><a href="">Personal Favorites</a></li>
-						<li><a href="<?php echo home_url( '/birds/families/' ); ?>">Birds by Family</a></li>
+						<li><a href="<?php echo home_url( '/families/' ); ?>">Personal Favorites</a></li>
+						<li><a href="<?php echo home_url( '/families/' ); ?>">Birds by Family</a></li>
 						<li><a>All Birds</a></li>
 					</ul>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
