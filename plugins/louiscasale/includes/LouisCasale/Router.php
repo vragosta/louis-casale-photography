@@ -71,7 +71,7 @@ class Router {
 	public $routes;
 
 	public function get_version() {
-		return '1.0.6';
+		return '1.0.7';
 	}
 
 	public function register() {
@@ -103,6 +103,14 @@ class Router {
 		$template_file = null;
 
 		switch ( $route_name ) {
+
+			case 'birds/recent':
+				$template_file = 'bird-recent-additions.php';
+				break;
+
+			case 'birds/favorites':
+				$template_file = 'bird-favorites.php';
+				break;
 
 			case 'birds/families':
 				$template_file = 'bird-families.php';
@@ -157,12 +165,30 @@ class Router {
 		}
 
 		$routes = array(
-			/* Custom Endpoints */
 
 			/*
-			 * Bird Families Route
-			 * Birds Families : /families/
+			 * Bird Routes
+			 *
+			 * Bird Recent Additions : /recent-additions/
+			 * Bird Favorites : /favorites/
+			 * Bird Families : /families/
 			 */
+			array(
+				'birds/recent',
+				'^recent-additions/?$',
+				array(
+					'bird_recent' => true,
+				),
+			),
+
+			array(
+				'birds/favorites',
+				'^favorites/?$',
+				array(
+					'bird_favorites' => true,
+				),
+			),
+
 			array(
 				'birds/families',
 				'^families/?$',
