@@ -46,8 +46,8 @@ namespace LouisCasale;
  * 1. route params
  *
  * array(
- *   'bird/family',
- *   '^birds/families/?$',
+ *   'bird/families',
+ *   '^/families/?$',
  *   array(
  *     'bird_families' => true,
  *   )
