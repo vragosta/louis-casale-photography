@@ -30,7 +30,7 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 					<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
 					<li><a name="galleries">Galleries</a></li>
 					<ul class="galleries">
-						<li><a href="<?php echo home_url( '/recent-additions/' )">Recent Additions</a></li>
+						<li><a href="<?php echo home_url( '/recent-additions/' ); ?>">Recent Additions</a></li>
 						<li><a href="<?php echo home_url( '/favorites/' ); ?>">Personal Favorites</a></li>
 						<li><a href="<?php echo home_url( '/families/' ); ?>">Birds by Family</a></li>
 						<li><a>All Birds</a></li>
