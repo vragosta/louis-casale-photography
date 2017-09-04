@@ -6,7 +6,7 @@ function get_bird_finder( $post_id ) {
 	return get_plugin()->get_bird_finder( $post_id );
 }
 
-function get_featured_birds() {
+function get_six_featured_birds() {
 	$birds = new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
 		'posts_per_page' => 6,
@@ -14,52 +14,58 @@ function get_featured_birds() {
 			array(
 				'key'     => '_featured',
 				'value'   => true,
-				'compare' => '='
-			)
-		)
+				'compare' => '=',
+			),
+		),
 	) );
 
 	if ( $birds->post_count === 0 ) {
 		$birds = new \WP_Query( array(
 			'post_type'      => BIRD_POST_TYPE,
-			'posts_per_page' => 6
+			'posts_per_page' => 6,
 		) );
 	}
 
 	return $birds;
 }
 
-function get_recent_birds() {
+function get_recent_birds( $posts_per_page ) {
 	return new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
-		'posts_per_page' => 2
+		'posts_per_page' => $posts_per_page ? $post_per_page : 20,
 	) );
 }
 
 function get_bird_families() {
 	return get_terms( array(
-		'taxonomy' => 'family',
+		'taxonomy'   => FAMILY_TAXONOMY,
 		'hide_empty' => false,
 	) );
 }
 
-function get_birds_by_family( $family ) {
+function get_birds_by_family( $term_slug ) {
 	$args = array(
-		'post_type' => BIRD_POST_TYPE,
+		'post_type'      => BIRD_POST_TYPE,
 		'posts_per_page' => -1,
-		'orderby' => 'title',
-		'order' => 'ASC'
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+		'tax_query'      => array(
+			array(
+				'taxonomy' => FAMILY_TAXONOMY,
+				'field'    => 'slug',
+				'terms'    => array( $term_slug ),
+			),
+		),
 	);
 
-	if ( ! empty( $family ) ) {
-		$args['tax_query'] = array(
-			array(
-				'taxonomy' => 'family',
-				'field'    => 'slug',
-				'terms'    => [ $family ]
-			)
-		);
-	}
-
 	return new \WP_Query( $args );
+}
+
+function get_all_birds() {
+	return new \WP_Query( array(
+		'post_type'      => BIRD_POST_TYPE,
+		'posts_per_page' => -1,
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+	) );
 }

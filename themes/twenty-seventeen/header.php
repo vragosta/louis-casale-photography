@@ -33,13 +33,13 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 						<li><a href="<?php echo home_url( '/recent-additions/' ); ?>">Recent Additions</a></li>
 						<li><a href="<?php echo home_url( '/favorites/' ); ?>">Personal Favorites</a></li>
 						<li><a href="<?php echo home_url( '/families/' ); ?>">Birds by Family</a></li>
-						<li><a>All Birds</a></li>
+						<li><a href="<?php echo home_url( '/birds/' ); ?>">All Birds</a></li>
 					</ul>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
 					<li><a name="contact">Contact</a></li>
 					<ul class="contact">
-						<li><a>Louis Casale</a></li>
-						<li><a>Web Developer</a></li>
+						<li><a href="<?php echo home_url( '/contact/' ); ?>">Louis Casale</a></li>
+						<li><a href="<?php echo home_url( '/contact/developer' ); ?>">Web Developer</a></li>
 					</ul>
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>

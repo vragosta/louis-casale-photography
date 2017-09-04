@@ -37,4 +37,9 @@ class BirdFinder {
 		return $value == true ? true : false;
 	}
 
+	public function is_favorited() {
+		$value = get_post_meta( $this->post_id, '_favorited', true );
+		return $value == true ? true : false;
+	}
+
 }

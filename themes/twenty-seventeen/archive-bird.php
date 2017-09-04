@@ -10,9 +10,7 @@ namespace LouisCasale;
 
 get_header();
 
-global $wp_query;
-$family = sanitize_text_field( $_GET['family'] );
-$birds = get_birds_by_family( $family );
+$birds = get_all_birds();
 $count = 0;
 
 ?>

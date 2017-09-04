@@ -45,22 +45,31 @@ class BirdMetaBox {
 		# Add a nonce field so we can check for it later.
 		wp_nonce_field( 'louiscasale_bird_save_data', 'louiscasale_bird_nonce' );
 
-		# Transfer key to _key.
-		$this->transfer_key( 'featured' );
+		# Transfer $key to _$key.
+		$this->transfer_key( $post->ID, 'featured' );
 
+		# Call BirdFinder class methods.
 		$finder = new BirdFinder( $post->ID );
 		$is_featured = $finder->is_featured();
+		$is_favorited = $finder->is_favorited();
 
 		?>
 
 		<table style="width: 100%;">
 			<tr>
 				<td>
-					<label for="featured"><?php echo esc_html( __( 'Featured Bird', 'louiscasale_com' ) ); ?></label>
+					<label for="_featured"><?php echo esc_html( __( 'Featured Bird', 'louiscasale_com' ) ); ?></label>
 				</td>
 				<td>
 					<input name="_featured" type="checkbox" <?php echo $is_featured == true ? 'checked': ''; ?> />
-					<input type="hidden" value="<?php echo $is_featured; ?>" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="_favorited"><?php echo esc_html( __( 'Favorited Bird', 'louiscasale_com' ) ); ?></label>
+				</td>
+				<td>
+					<input name="_favorited" type="checkbox" <?php echo $is_favorited == true ? 'checked': ''; ?> />
 				</td>
 			</tr>
 		</table><?php
@@ -98,14 +107,12 @@ class BirdMetaBox {
 		}
 
 		# Catch the default checkbox behavior.
-		if ( $_POST['_featured'] == 'on' ) {
-			$featured = true;
-		} else {
-			$featured = false;
-		}
+		$featured = $_POST['_featured'] == 'on' ? true : false;
+		$favorited = $_POST['_favorited'] == 'on' ? true : false;
 
 		# Sanitize the input and update the meta field in the database.
 		update_post_meta( $post_id, '_featured', $featured );
+		update_post_meta( $post_id, '_favorited', $favorited );
 	}
 
 	/**
@@ -115,16 +122,15 @@ class BirdMetaBox {
 	 * @uses   metadata_exists(), get_post_meta(), update_post_meta(), delete_post_meta_by_key()
 	 * @return void
 	 */
-	function transfer_key( $key ) {
-		if ( metadata_exists( 'post', $post->ID, $key ) ) {
-			$featured = get_post_meta( $post->ID, $key, true );
+	function transfer_key( $id, $key ) {
+		if ( metadata_exists( 'post', $id, $key ) ) {
+			$featured = get_post_meta( $id, $key, true );
 
 			if ( $featured == 'on' ) {
 				$featured = true;
 			}
 
-			update_post_meta( $post->ID, "_$key", $featured );
-			delete_post_meta_by_key( $key );
+			update_post_meta( $id, "_$key", $featured );
 		}
 	}
 

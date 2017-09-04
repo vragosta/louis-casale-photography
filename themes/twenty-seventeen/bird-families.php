@@ -29,7 +29,7 @@ $count = 0;
 				<?php } ?>
 
 				<div class="archive-item col-xs-12 col-sm-4 col-md-4">
-					<a href="<?php echo home_url( "/birds?family=$family->slug/" ); ?>">
+					<a href="<?php echo home_url( "/family/$family->slug/" ); ?>">
 						<figure class="photo unloaded">
 							<div style="background-image: url( <?php echo $image ?> );"></div>
 						</figure>

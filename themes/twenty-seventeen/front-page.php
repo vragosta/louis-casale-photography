@@ -10,8 +10,8 @@ namespace LouisCasale;
 
 get_header();
 
-$featured_birds = get_featured_birds();
-$recent_birds = get_recent_birds();
+$featured_birds = get_six_featured_birds();
+$recent_birds = get_recent_birds( 2 );
 $blog_posts = get_recent_posts();
 
 $page = get_page_by_path( 'about' );
