@@ -7,10 +7,9 @@
  */
 
 $user = get_user_by( 'login', 'lcasale' );
-
-$facebook  = get_user_meta( $user->ID, 'facebook', true );
-$twitter   = get_user_meta( $user->ID, 'twitter', true );
-$instagram = get_user_meta( $user->ID, 'instagram', true );
+$facebook = get_user_meta( $user->ID, '_facebook', true );
+$twitter = get_user_meta( $user->ID, '_twitter', true );
+$instagram = get_user_meta( $user->ID, '_instagram', true );
 
 ?>
 
@@ -31,26 +30,17 @@ $instagram = get_user_meta( $user->ID, 'instagram', true );
 					<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
 					<li><a name="galleries">Galleries</a></li>
 					<ul class="galleries">
-						<li><a>Recent Additions</a></li>
-						<li><a>Personal Favorites</a></li>
-						<li><a>Birds by Family</a></li>
+						<li><a href="">Recent Additions</a></li>
+						<li><a href="">Personal Favorites</a></li>
+						<li><a href="<?php echo home_url( '/birds/families/' ); ?>">Birds by Family</a></li>
 						<li><a>All Birds</a></li>
 					</ul>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
-					<li><a>Contact</a></li>
-					<!-- <li>
-						<div class="btn-group">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Contact
-								<i class="ion ion-chevron-down"></i>
-							</button>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="<?php echo home_url( '/contact/' ); ?>">Louis Casale</a>
-								<hr />
-								<a class="dropdown-item" href="<?php echo home_url( '/contact/developer' ); ?>">Web Developer</a>
-							</div>
-						</div>
-					</li> -->
+					<li><a name="contact">Contact</a></li>
+					<ul class="contact">
+						<li><a>Louis Casale</a></li>
+						<li><a>Web Developer</a></li>
+					</ul>
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>
 					<div class="social">

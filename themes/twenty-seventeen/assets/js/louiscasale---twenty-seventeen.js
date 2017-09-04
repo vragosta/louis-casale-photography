@@ -128,9 +128,11 @@
 		},
 
 		/**
+		 * Click listener for galleries and contact buttons in nav menu.
 		 *
-		 *
-		 *
+		 * @since 0.1.0
+		 * @uses on(), hasClass(), removeClass(), addClass()
+		 * @return void
 		 */
 		pushdownMenu: function() {
 			$( 'body' ).on( 'click', 'a[name=galleries]', function() {
@@ -138,6 +140,14 @@
 					$( '.galleries' ).removeClass( 'display' );
 				} else {
 					$( '.galleries' ).addClass( 'display' );
+				}
+			});
+
+			$( 'body' ).on( 'click', 'a[name=contact]', function() {
+				if ( $( '.contact' ).hasClass( 'display' ) ) {
+					$( '.contact' ).removeClass( 'display' );
+				} else {
+					$( '.contact' ).addClass( 'display' );
 				}
 			});
 		},

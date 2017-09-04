@@ -51,7 +51,7 @@ function get_birds_by_family( $family ) {
 		'order' => 'ASC'
 	);
 
-	if ( isset( $family ) ) {
+	if ( ! empty( $family ) ) {
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'family',

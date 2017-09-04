@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the bird archive.
+ * Template for displaying the 'All Birds' archive.
  *
  * @package LouisCasale - Twenty Seventeen
  * @since 0.1.0
@@ -11,7 +11,7 @@ namespace LouisCasale;
 get_header();
 
 global $wp_query;
-$family = $_GET['family'];
+$family = sanitize_text_field( $_GET['family'] );
 $birds = get_birds_by_family( $family );
 $count = 0;
 

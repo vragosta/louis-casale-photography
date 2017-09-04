@@ -69,7 +69,8 @@
 	font-size: 16px;
 }
 
-.navigation .galleries {
+.navigation .galleries,
+.navigation .contact {
 	height: 0px;
 	opacity: 0;
 	visibility: hidden;
@@ -78,12 +79,21 @@
 
 .navigation .galleries.display {
 	height: 88px;
+}
+
+.navigation .contact.display {
+	height: 40px;
+}
+
+.navigation .galleries.display,
+.navigation .contact.display {
 	opacity: 1;
 	visibility: visible;
 	margin: 0 0 20px;
 }
 
-.navigation .galleries li {
+.navigation .galleries li,
+.navigation .contact li {
 	margin: 0 0 0 10px;;
 }
 

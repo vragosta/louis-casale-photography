@@ -56,6 +56,9 @@ class Plugin {
 		$this->post_type_factory = new PostTypeFactory();
 		$this->post_type_factory->build_all();
 
+		$this->router = new Router();
+		$this->router->register();
+
 		# Add json endpoint register endpoints here.
 		$contact_api = new Contact();
 		$contact_api->register();

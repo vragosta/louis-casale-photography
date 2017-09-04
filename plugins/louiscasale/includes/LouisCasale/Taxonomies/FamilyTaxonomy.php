@@ -3,7 +3,7 @@
 namespace LouisCasale\Taxonomies;
 
 /**
- * Freeform keywords Taxonomy similar to Tags.
+ * Taxonomy declaration for bird familes.
  */
 class FamilyTaxonomy extends BaseTaxonomy {
 	public function get_name() {
@@ -33,7 +33,6 @@ class FamilyTaxonomy extends BaseTaxonomy {
 	public function get_options() {
 		return array(
 			'labels'            => $this->get_labels(),
-			'rewrite'           => array( 'slug' => 'families' ),
 			'hierarchical'      => true,
 			'public'            => true,
 			'show_admin_column' => false,
@@ -42,5 +41,9 @@ class FamilyTaxonomy extends BaseTaxonomy {
 			'show_ui'           => true,
 			'query_var'         => true
 		);
+	}
+
+	public function get_post_types() {
+		return array( 'bird' );
 	}
 }
