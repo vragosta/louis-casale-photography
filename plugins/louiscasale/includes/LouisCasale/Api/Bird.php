@@ -6,10 +6,10 @@ function get_bird_finder( $post_id ) {
 	return get_plugin()->get_bird_finder( $post_id );
 }
 
-function get_six_featured_birds() {
+function get_featured_birds( $posts_per_page ) {
 	$birds = new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
-		'posts_per_page' => 6,
+		'posts_per_page' => $posts_per_page ? $posts_per_page : 6,
 		'meta_query'     => array(
 			array(
 				'key'     => '_featured',
@@ -22,7 +22,7 @@ function get_six_featured_birds() {
 	if ( $birds->post_count === 0 ) {
 		$birds = new \WP_Query( array(
 			'post_type'      => BIRD_POST_TYPE,
-			'posts_per_page' => 6,
+			'posts_per_page' => $posts_per_page ? $posts_per_page : 6,
 		) );
 	}
 
@@ -34,6 +34,29 @@ function get_recent_birds( $posts_per_page ) {
 		'post_type'      => BIRD_POST_TYPE,
 		'posts_per_page' => $posts_per_page ? $post_per_page : 20,
 	) );
+}
+
+function get_favorite_birds( $posts_per_page ) {
+	$birds = new \WP_Query( array(
+		'post_type'      => BIRD_POST_TYPE,
+		'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+		'meta_query'     => array(
+			array(
+				'key'     => '_favorited',
+				'value'   => true,
+				'compare' => '=',
+			),
+		),
+	) );
+
+	if ( $birds->post_count === 0 ) {
+		$birds = new \WP_Query( array(
+			'post_type'      => BIRD_POST_TYPE,
+			'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+		) );
+	}
+
+	return $birds;
 }
 
 function get_bird_families() {

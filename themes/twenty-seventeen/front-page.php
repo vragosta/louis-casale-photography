@@ -10,8 +10,9 @@ namespace LouisCasale;
 
 get_header();
 
-$featured_birds = get_six_featured_birds();
+$featured_birds = get_featured_birds();
 $recent_birds = get_recent_birds( 2 );
+$favorite_birds = get_favorite_birds( 2 );
 $blog_posts = get_recent_posts();
 
 $page = get_page_by_path( 'about' );
@@ -49,10 +50,37 @@ $about_page_excerpt = $page->post_excerpt; ?>
 
 	<?php if ( $recent_birds->have_posts() ) { ?>
 		<div class="recent-photographs">
-			<h2>Recent Photographs</h2>
+			<h2>Recent Additions</h2>
 			<div class="row">
 				<?php while ( $recent_birds->have_posts() ) { ?>
 					<?php $recent_birds->the_post(); ?>
+					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
+						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
+							<figure class="photo unloaded">
+								<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
+							</figure>
+						</a>
+						<h5 class="unloaded"><?php the_title(); ?></h5>
+					</div>
+
+					<?php if ( get_the_excerpt() ) { ?>
+						<div class="custom-caption unloaded" data-id="<?php echo $post->ID; ?>">
+							<?php the_excerpt(); ?>
+						</div>
+					<?php } ?>
+				<?php } ?>
+				<?php wp_reset_postdata(); ?>
+			</div>
+			<a class="align-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+		</div>
+	<?php } ?>
+
+	<?php if ( $favorite_birds->have_posts() ) { ?>
+		<div class="recent-photographs">
+			<h2>Personal Favorites</h2>
+			<div class="row">
+				<?php while ( $favorite_birds->have_posts() ) { ?>
+					<?php $favorite_birds->the_post(); ?>
 					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
 						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
