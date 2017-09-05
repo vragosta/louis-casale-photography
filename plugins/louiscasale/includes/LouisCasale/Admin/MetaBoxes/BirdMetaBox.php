@@ -58,7 +58,7 @@ class BirdMetaBox {
 		<table style="width: 100%;">
 			<tr>
 				<td>
-					<label for="_featured"><?php echo esc_html( __( 'Featured Bird', 'louiscasale_com' ) ); ?></label>
+					<label for="_featured"><?php echo esc_html( __( 'Feature Bird', 'louiscasale_com' ) ); ?></label>
 				</td>
 				<td>
 					<input name="_featured" type="checkbox" <?php echo $is_featured == true ? 'checked': ''; ?> />
@@ -66,7 +66,7 @@ class BirdMetaBox {
 			</tr>
 			<tr>
 				<td>
-					<label for="_favorited"><?php echo esc_html( __( 'Favorited Bird', 'louiscasale_com' ) ); ?></label>
+					<label for="_favorited"><?php echo esc_html( __( 'Favorite Bird', 'louiscasale_com' ) ); ?></label>
 				</td>
 				<td>
 					<input name="_favorited" type="checkbox" <?php echo $is_favorited == true ? 'checked': ''; ?> />
