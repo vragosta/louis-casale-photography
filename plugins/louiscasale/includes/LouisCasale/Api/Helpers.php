@@ -42,10 +42,7 @@ function louiscasale_breadcrumbs() {
 				/*--- Custom functionality ---*/
 				if ( $post_type == 'bird' ) {
 
-					$page = get_page_by_title( 'Gallery' );
-					$page_link = get_the_permalink( $page->ID );
-
-					echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $page_link . '" title="' . $page->post_name . '">' . $page->post_title . '</a></li>';
+					echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . home_url( '/families/' ) . '" title="families">Families</a></li>';
 					echo '<li class="separator"> ' . $separator . ' </li>';
 
 				} else {
@@ -262,4 +259,24 @@ function louiscasale_breadcrumbs() {
 
 function get_featured_image( $id, $size ) {
 	return wp_get_attachment_image_src( get_post_thumbnail_id( $id ), $size )[0];
+}
+
+function is_blog() {
+	return is_home() && ! get_query_var( 'bird_families' ) && ! get_query_var( 'bird_favorites' ) && ! get_query_var( 'bird_recent' );
+}
+
+function is_gallery() {
+	return get_query_var( 'bird_families' ) || get_query_var( 'bird_favorites' ) || get_query_var( 'bird_recent' ) || is_archive( 'bird' );
+}
+
+function is_bird_recent_additions() {
+	return get_query_var( 'bird_recent' );
+}
+
+function is_bird_favorites() {
+	return get_query_var( 'bird_favorites' );
+}
+
+function is_bird_families() {
+	return get_query_var( 'bird_families' );
 }

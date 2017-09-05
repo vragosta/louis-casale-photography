@@ -39,11 +39,6 @@ $count = 0;
 					<h5 class="unloaded"><?php the_title(); ?></h5>
 				</div>
 
-				<?php if ( get_the_excerpt() ) { ?>
-					<div class="custom-caption unloaded" data-id="<?php echo $post->ID; ?>">
-						<?php the_excerpt(); ?>
-					</div>
-				<?php } ?>
 				<?php $count++; ?>
 			<?php } ?>
 			<?php wp_reset_postdata(); ?>

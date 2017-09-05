@@ -105,25 +105,6 @@
 				var id = $( this ).data( 'id' );
 
 				$( '.custom-arrow' ).show();
-				$( '.archive #swipebox-close' ).removeClass( 'unloaded' );
-				$( '.custom-arrow' ).attr( 'data-id', id );
-			});
-
-			$( 'body' ).on( 'mouseenter', '#swipebox-overlay img', function() {
-				var id = $( '.custom-arrow' ).attr( 'data-id' );
-				$( '.custom-caption[data-id=' + id + ']' ).removeClass( 'unloaded' );
-			});
-
-			$( 'body' ).on( 'mouseleave', '#swipebox-overlay img', function() {
-				var id = $( '.custom-arrow' ).attr( 'data-id' );
-				$( '.custom-caption[data-id=' + id + ']' ).addClass( 'unloaded' );
-			});
-
-			$( document ).keyup( function( e ) {
-				if ( e.keyCode === 27 ) {
-					var id = $( '.custom-arrow' ).attr( 'data-id' );
-					$( '.custom-caption[data-id=' + id + ']' ).addClass( 'unloaded' );
-				}
 			});
 		},
 

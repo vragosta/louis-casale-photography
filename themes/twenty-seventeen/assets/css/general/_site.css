@@ -21,7 +21,7 @@ a:active:focus {
 }
 
 a:hover {
-	color: #858585;
+	color: #5295b7;
 }
 
 .container {
@@ -33,7 +33,7 @@ a:hover {
 }
 
 .content a {
-	color: #858585;
+	color: #5295b7;
 	transition: 0.3s color ease-in-out;
 }
 

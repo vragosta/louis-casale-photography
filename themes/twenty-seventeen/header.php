@@ -26,20 +26,20 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 			<section class="navigation col-xs-12 col-sm-3 col-md-2">
 				<h1><a href="<?php echo home_url(); ?>">Louis Casale Photography</a></h1>
 				<ul>
-					<li><a href="<?php echo home_url(); ?>">Home</a></li>
-					<li><a href="<?php echo home_url( '/about/' ); ?>">About</a></li>
+					<li><a href="<?php echo home_url(); ?>" <?php echo is_front_page() ? 'class="active"' : ''; ?>>Home</a></li>
+					<li><a href="<?php echo home_url( '/about/' ); ?>" <?php echo is_page( 'about' ) ? 'class="active"' : ''; ?>>About</a></li>
 					<li><a name="galleries">Galleries</a></li>
-					<ul class="galleries">
-						<li><a href="<?php echo home_url( '/recent-additions/' ); ?>">Recent Additions</a></li>
-						<li><a href="<?php echo home_url( '/favorites/' ); ?>">Personal Favorites</a></li>
-						<li><a href="<?php echo home_url( '/families/' ); ?>">Birds by Family</a></li>
-						<li><a href="<?php echo home_url( '/birds/' ); ?>">All Birds</a></li>
+					<ul class="galleries <?php echo \LouisCasale\is_gallery() ? 'display' : ''; ?>">
+						<li><a href="<?php echo home_url( '/recent-additions/' ); ?>" <?php echo \LouisCasale\is_bird_recent_additions() ? 'class="active"' : ''; ?>>Recent Additions</a></li>
+						<li><a href="<?php echo home_url( '/favorites/' ); ?>" <?php echo \LouisCasale\is_bird_favorites() ? 'class="active"' : ''; ?>>Personal Favorites</a></li>
+						<li><a href="<?php echo home_url( '/families/' ); ?>" <?php echo \LouisCasale\is_bird_families() ? 'class="active"' : ''; ?>>Birds by Family</a></li>
+						<li><a href="<?php echo home_url( '/birds/' ); ?>" <?php echo is_archive( 'bird' ) ? 'class="active"' : ''; ?>>All Birds</a></li>
 					</ul>
-					<li><a href="<?php echo home_url( '/blog/' ); ?>">Blog</a></li>
+					<li><a href="<?php echo home_url( '/blog/' ); ?>" <?php echo \LouisCasale\is_blog() ? 'class="active"' : ''; ?>>Blog</a></li>
 					<li><a name="contact">Contact</a></li>
-					<ul class="contact">
-						<li><a href="<?php echo home_url( '/contact/' ); ?>">Louis Casale</a></li>
-						<li><a href="<?php echo home_url( '/contact/developer' ); ?>">Web Developer</a></li>
+					<ul class="contact <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
+						<li><a href="<?php echo home_url( '/contact/' ); ?>" <?php echo is_page( 'contact' ) ? 'class="active"' : ''; ?>>Louis Casale</a></li>
+						<li><a href="<?php echo home_url( '/contact/developer' ); ?>" <?php echo is_page( 'developer' ) ? 'class="active"' : ''; ?>>Web Developer</a></li>
 					</ul>
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>

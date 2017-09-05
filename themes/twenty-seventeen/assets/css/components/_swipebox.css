@@ -59,28 +59,17 @@
 }
 
 #swipebox-top-bar {
-	display: none !important;
+	background: transparent !important;
 }
 
-.custom-caption {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 100000;
-	padding: 20px 50px 20px 10px;
-	background: #0d0d0d;
-	transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+@media only screen and ( max-width: 768px ) {
+	#swipebox-top-bar {
+		height: 80px !important;
+	}
 }
 
-.custom-caption.unloaded {
-	opacity: 0;
-	visibility: hidden;
-}
-
-.custom-caption p {
-	color: #fff;
-	text-align: center;
-	margin: 0 !important;
+#swipebox-title {
 	line-height: 1;
+	margin: 0;
+	padding: 0 50px;
 }
