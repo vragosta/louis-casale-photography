@@ -41,7 +41,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 	<?php } ?>
 
 	<div class="inline-navigation">
-		<h2><a href="<?php echo home_url( '/gallery/' ); ?>">Browse Bird Gallery</a></h2>
+		<h2><a href="<?php echo home_url( '/birds/' ); ?>">Browse Bird Gallery</a></h2>
 		<div class="vertical-line"></div>
 		<h2><a href="<?php echo home_url( '/contact/' ); ?>">Contact Louis</a></h2>
 		<div class="vertical-line"></div>
@@ -71,7 +71,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 				<?php } ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
-			<a class="align-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+			<a class="align-right" href="<?php echo home_url( '/recent-additions/' ); ?>">View more recent additions >></a>
 		</div>
 	<?php } ?>
 
@@ -98,7 +98,7 @@ $about_page_excerpt = $page->post_excerpt; ?>
 				<?php } ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
-			<a class="align-right" href="<?php echo home_url( '/gallery/' ); ?>">View more photographs >></a>
+			<a class="align-right" href="<?php echo home_url( '/favorites/' ); ?>">View more personal favorites >></a>
 		</div>
 	<?php } ?>
 

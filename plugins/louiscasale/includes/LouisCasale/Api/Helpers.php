@@ -27,8 +27,11 @@ function louiscasale_breadcrumbs() {
 		echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
 		if ( is_archive() && ! is_tax() && ! is_category() && ! is_tag() ) {
+
+
 			echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title( $prefix, false ) . '</strong></li>';
 		} else if ( is_archive() && is_tax() && ! is_category() && ! is_tag() ) {
+
 
 			# If post is a custom post type
 			$post_type = get_post_type();
@@ -53,6 +56,7 @@ function louiscasale_breadcrumbs() {
 					echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
 					echo '<li class="separator"> ' . $separator . ' </li>';
 				}
+
 
 			}
 
@@ -235,6 +239,19 @@ function louiscasale_breadcrumbs() {
 
 			# 404 page
 			echo '<li>' . 'Error 404' . '</li>';
+
+		} else if ( get_query_var('bird_families') ) {
+
+			echo '<li class="item-current item-current-' . get_query_var('bird_families') . '"><strong class="bread-current bread-current-' . get_query_var('bird_families') . '" title="Page ' . get_query_var('bird_families') . '">'.__('Families') . '</strong></li>';
+
+		} else if ( get_query_var('bird_favorites') ) {
+
+			echo '<li class="item-current item-current-' . get_query_var('bird_favorites') . '"><strong class="bread-current bread-current-' . get_query_var('bird_favorites') . '" title="Page ' . get_query_var('bird_favorites') . '">'.__('Personal Favorites') . '</strong></li>';
+
+		} else if ( get_query_var('bird_recent') ) {
+
+			echo '<li class="item-current item-current-' . get_query_var('bird_recent') . '"><strong class="bread-current bread-current-' . get_query_var('bird_recent') . '" title="Page ' . get_query_var('bird_recent') . '">'.__('Recent Additions') . '</strong></li>';
+
 		}
 
 		echo '</ul>';

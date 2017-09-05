@@ -32,7 +32,7 @@ function get_featured_birds( $posts_per_page ) {
 function get_recent_birds( $posts_per_page ) {
 	return new \WP_Query( array(
 		'post_type'      => BIRD_POST_TYPE,
-		'posts_per_page' => $posts_per_page ? $post_per_page : 20,
+		'posts_per_page' => $posts_per_page ? $posts_per_page : 20,
 	) );
 }
 
