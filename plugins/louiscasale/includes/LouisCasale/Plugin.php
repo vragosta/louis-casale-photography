@@ -4,6 +4,7 @@ namespace LouisCasale;
 
 use LouisCasale\Admin\MetaBoxes\BirdMetaBox;
 use LouisCasale\Admin\MetaBoxes\PostMetaFieldsMetaBox;
+use LouisCasale\Admin\BirdColumnsSupport;
 use LouisCasale\Admin\MetaBoxes\UserMetaBox;
 use LouisCasale\Endpoints\Contact;
 use LouisCasale\Finders\BirdFinder;
@@ -76,6 +77,9 @@ class Plugin {
 
 		$user_meta_box = new UserMetaBox();
 		$user_meta_box->register();
+
+		$bird_columns_support = new BirdColumnsSupport();
+		$bird_columns_support->register();
 	}
 
 	function get_bird_finder( $post_id ) {
