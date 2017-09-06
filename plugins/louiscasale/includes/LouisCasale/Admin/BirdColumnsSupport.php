@@ -61,10 +61,13 @@ class BirdColumnsSupport {
 
 			case 'family':
 				$bird_id = $finder->get_post_id();
-				$families = wp_get_post_terms( $bird_id, FAMILY_TAXONOMY, array( 'fields' => 'names' ) );
+				$families = wp_get_post_terms( $bird_id, FAMILY_TAXONOMY );
 
 				if ( $families ) {
-					echo implode( ',', $families );
+					// echo implode( ',', $families );
+					foreach( $families as $family ) {
+						printf( '<a href="%s">%s</a><br>', get_edit_term_link( intval( $family->term_id ), FAMILY_TAXONOMY, BIRD_POST_TYPE ), $family->name );
+					}
 				} else {
 					echo 'None';
 				}
