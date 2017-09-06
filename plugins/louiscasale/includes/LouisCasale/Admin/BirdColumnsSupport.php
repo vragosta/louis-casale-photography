@@ -18,6 +18,7 @@ class BirdColumnsSupport {
 		$defaults['bird_id']  = __( 'Bird ID', 'louiscasale_com' );
 		$defaults['feature']  = __( 'Feature', 'louiscasale_com' );
 		$defaults['favorite'] = __( 'Favorite', 'louiscasale_com' );
+		$defaults['family'] = __( 'Families', 'louiscasale_com' );
 
 		return $defaults;
 	}
@@ -27,6 +28,16 @@ class BirdColumnsSupport {
 		$finder = new BirdFinder( $post_id );
 
 		switch ( $column_name ) {
+
+			case 'bird_id':
+				$bird_id = $finder->get_post_id();
+
+				if ( $bird_id ) {
+					printf( '<a href="%s">%s</a><br>', get_edit_post_link( intval( $bird_id ) ), $bird_id );
+				} else {
+					echo 'None';
+				}
+				break;
 
 			case 'feature':
 				$feature = $finder->is_featured();
@@ -48,11 +59,12 @@ class BirdColumnsSupport {
 				}
 				break;
 
-			case 'bird_id':
+			case 'family':
 				$bird_id = $finder->get_post_id();
+				$families = wp_get_post_terms( $bird_id, FAMILY_TAXONOMY, array( 'fields' => 'names' ) );
 
-				if ( $bird_id ) {
-					printf( '<a href="%s">%s</a><br>', get_edit_post_link( intval( $bird_id ) ), $bird_id );
+				if ( $families ) {
+					echo implode( ',', $families );
 				} else {
 					echo 'None';
 				}
