@@ -29,18 +29,22 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 					<li><a href="<?php echo home_url(); ?>" <?php echo is_front_page() ? 'class="active"' : ''; ?>>Home</a></li>
 					<li><a href="<?php echo home_url( '/about/' ); ?>" <?php echo is_page( 'about' ) ? 'class="active"' : ''; ?>>About</a></li>
 					<li><a name="galleries">Galleries</a></li>
-					<ul class="galleries <?php echo \LouisCasale\is_gallery() ? 'display' : ''; ?>">
-						<li><a href="<?php echo home_url( '/recent-additions/' ); ?>" <?php echo \LouisCasale\is_bird_recent_additions() ? 'class="active"' : ''; ?>>Recent Additions</a></li>
-						<li><a href="<?php echo home_url( '/favorites/' ); ?>" <?php echo \LouisCasale\is_bird_favorites() ? 'class="active"' : ''; ?>>Personal Favorites</a></li>
-						<li><a href="<?php echo home_url( '/families/' ); ?>" <?php echo \LouisCasale\is_bird_families() ? 'class="active"' : ''; ?>>Birds by Family</a></li>
-						<li><a href="<?php echo home_url( '/birds/' ); ?>" <?php echo is_archive( 'bird' ) ? 'class="active"' : ''; ?>>All Birds</a></li>
-					</ul>
+					<li>
+						<ul class="galleries <?php echo \LouisCasale\is_gallery() ? 'display' : ''; ?>">
+							<li><a href="<?php echo home_url( '/recent-additions/' ); ?>" <?php echo \LouisCasale\is_bird_recent_additions() ? 'class="active"' : ''; ?>>Recent Additions</a></li>
+							<li><a href="<?php echo home_url( '/favorites/' ); ?>" <?php echo \LouisCasale\is_bird_favorites() ? 'class="active"' : ''; ?>>Personal Favorites</a></li>
+							<li><a href="<?php echo home_url( '/families/' ); ?>" <?php echo \LouisCasale\is_bird_families() ? 'class="active"' : ''; ?>>Birds by Family</a></li>
+							<li><a href="<?php echo home_url( '/birds/' ); ?>" <?php echo is_archive( 'bird' ) ? 'class="active"' : ''; ?>>All Birds</a></li>
+						</ul>
+					</li>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>" <?php echo \LouisCasale\is_blog() ? 'class="active"' : ''; ?>>Blog</a></li>
 					<li><a name="contact">Contact</a></li>
-					<ul class="contact <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
-						<li><a href="<?php echo home_url( '/contact/' ); ?>" <?php echo is_page( 'contact' ) ? 'class="active"' : ''; ?>>Louis Casale</a></li>
-						<li><a href="<?php echo home_url( '/contact/developer' ); ?>" <?php echo is_page( 'developer' ) ? 'class="active"' : ''; ?>>Web Developer</a></li>
-					</ul>
+					<li>
+						<ul class="contact <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
+							<li><a href="<?php echo home_url( '/contact/' ); ?>" <?php echo is_page( 'contact' ) ? 'class="active"' : ''; ?>>Louis Casale</a></li>
+							<li><a href="<?php echo home_url( '/contact/developer' ); ?>" <?php echo is_page( 'developer' ) ? 'class="active"' : ''; ?>>Web Developer</a></li>
+						</ul>
+					</li>
 				</ul>
 				<?php if ( ! empty( $facebook ) || ! empty( $twitter ) || ! empty( $instagram ) ) { ?>
 					<div class="social">
