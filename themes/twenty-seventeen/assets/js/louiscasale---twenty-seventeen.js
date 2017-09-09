@@ -116,7 +116,7 @@
 		 * @return void
 		 */
 		pushdownMenu: function() {
-			$( 'body' ).on( 'click', 'a[name=galleries]', function() {
+			$( 'body' ).on( 'click', '#galleries', function() {
 				if ( $( '.galleries' ).hasClass( 'display' ) ) {
 					$( '.galleries' ).removeClass( 'display' );
 				} else {
@@ -124,7 +124,7 @@
 				}
 			});
 
-			$( 'body' ).on( 'click', 'a[name=contact]', function() {
+			$( 'body' ).on( 'click', '#contact', function() {
 				if ( $( '.contact' ).hasClass( 'display' ) ) {
 					$( '.contact' ).removeClass( 'display' );
 				} else {

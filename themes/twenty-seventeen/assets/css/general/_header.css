@@ -89,7 +89,7 @@
 .navigation .contact.display {
 	opacity: 1;
 	visibility: visible;
-	margin: 0 0 20px;
+	margin: 20px 0 0;
 }
 
 .navigation .galleries li,

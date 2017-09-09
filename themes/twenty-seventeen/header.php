@@ -28,8 +28,8 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 				<ul>
 					<li><a href="<?php echo home_url(); ?>" <?php echo is_front_page() ? 'class="active"' : ''; ?>>Home</a></li>
 					<li><a href="<?php echo home_url( '/about/' ); ?>" <?php echo is_page( 'about' ) ? 'class="active"' : ''; ?>>About</a></li>
-					<li><a name="galleries">Galleries</a></li>
 					<li>
+						<a id="galleries">Galleries</a>
 						<ul class="galleries <?php echo \LouisCasale\is_gallery() ? 'display' : ''; ?>">
 							<li><a href="<?php echo home_url( '/recent-additions/' ); ?>" <?php echo \LouisCasale\is_bird_recent_additions() ? 'class="active"' : ''; ?>>Recent Additions</a></li>
 							<li><a href="<?php echo home_url( '/favorites/' ); ?>" <?php echo \LouisCasale\is_bird_favorites() ? 'class="active"' : ''; ?>>Personal Favorites</a></li>
@@ -38,8 +38,8 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 						</ul>
 					</li>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>" <?php echo \LouisCasale\is_blog() ? 'class="active"' : ''; ?>>Blog</a></li>
-					<li><a name="contact">Contact</a></li>
 					<li>
+						<a id="contact">Contact</a>
 						<ul class="contact <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
 							<li><a href="<?php echo home_url( '/contact/' ); ?>" <?php echo is_page( 'contact' ) ? 'class="active"' : ''; ?>>Louis Casale</a></li>
 							<li><a href="<?php echo home_url( '/contact/developer' ); ?>" <?php echo is_page( 'developer' ) ? 'class="active"' : ''; ?>>Web Developer</a></li>
