@@ -68,6 +68,6 @@ From,
 
 		wp_mail( $to, $subject, $content );
 
-		return new WP_REST_Response( 200 );
+		return new \WP_REST_Response( 200 );
 	}
 };
