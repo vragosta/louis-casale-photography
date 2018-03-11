@@ -74,8 +74,21 @@
 					},
 					data: JSON.stringify( data ),
 					dataType: 'json',
+					statusCode: {
+						500: function() {
+							$( '#message' )
+								.addClass( 'alert-danger' )
+								.text( 'There was an issue with your form submission.' )
+								.show();
+						}
+					}
 				} ).then(function( response ) {
-					location.reload();
+					if ( response ) {
+						$( '.message' )
+							.addClass( 'alert-success' )
+							.text( 'Email successfully sent.' )
+							.show();
+					}
 				} );
 			});
 		},

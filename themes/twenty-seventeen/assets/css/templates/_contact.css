@@ -3,6 +3,10 @@
  * Contact CSS
  */
 
+.message {
+	display: none;
+}
+
 .page .contact {
 	padding-bottom: 40px;
 }
