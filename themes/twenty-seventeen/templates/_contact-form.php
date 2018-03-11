@@ -39,6 +39,8 @@ namespace LouisCasale;
 			</div>
 		<?php } ?>
 
+		<div class="message" style="padding: 20px; border-radius: 10px;"></div>
+
 		<div class="field-container row">
 			<div class="form-group col-md-6">
 				<label for="firstname">First Name *</label>
