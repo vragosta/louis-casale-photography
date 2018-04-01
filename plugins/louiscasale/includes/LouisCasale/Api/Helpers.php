@@ -280,3 +280,56 @@ function is_bird_favorites() {
 function is_bird_families() {
 	return get_query_var( 'bird_families' );
 }
+
+function get_featured_birds_landscape( $posts_per_page = null ) {
+	$featured = new \WP_Query( array(
+		'post_type' => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
+		'posts_per_page' => $posts_per_page ?: 6,
+		'meta_query' => array(
+			array(
+				'key'     => '_featured',
+				'value'   => true,
+				'compare' => '='
+			)
+		)
+	) );
+
+	if ( $featured->post_count === 0 ) {
+		$featured = new \WP_Query( array(
+			'post_type'      => LANDSCAPE_POST_TYPE,
+			'posts_per_page' => $posts_per_page ? $posts_per_page : 6,
+		) );
+	}
+
+	return $featured;
+}
+
+function get_recent_birds_landscape( $posts_per_page = null ) {
+	return new \WP_Query( array(
+		'post_type'      => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
+		'posts_per_page' => $posts_per_page ? $posts_per_page : 20,
+	) );
+}
+
+function get_favorite_birds_landscape( $posts_per_page ) {
+	$favorite = new \WP_Query( array(
+		'post_type'      => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
+		'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+		'meta_query'     => array(
+			array(
+				'key'     => '_favorited',
+				'value'   => true,
+				'compare' => '=',
+			),
+		),
+	) );
+
+	if ( $favorite->post_count === 0 ) {
+		$favorite = new \WP_Query( array(
+			'post_type'      => BIRD_POST_TYPE,
+			'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+		) );
+	}
+
+	return $favorite;
+}

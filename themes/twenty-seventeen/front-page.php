@@ -10,9 +10,9 @@ namespace LouisCasale;
 
 get_header();
 
-$featured_birds = get_featured_birds();
-$recent_birds = get_recent_birds( 2 );
-$favorite_birds = get_favorite_birds( 2 );
+$featured_birds_landscape = get_featured_birds_landscape();
+$recent_birds_landscape = get_recent_birds_landscape( 2 );
+$favorite_birds_landscape = get_favorite_birds_landscape( 2 );
 $blog_posts = get_recent_posts();
 
 $page = get_page_by_path( 'about' );
@@ -20,10 +20,10 @@ $about_page_excerpt = $page->post_excerpt; ?>
 
 <section class="front-page content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
-	<?php if ( $featured_birds->have_posts() ) { ?>
+	<?php if ( $featured_birds_landscape->have_posts() ) { ?>
 		<div class="carousel main">
-			<?php while ( $featured_birds->have_posts() ) { ?>
-				<?php $featured_birds->the_post(); ?>
+			<?php while ( $featured_birds_landscape->have_posts() ) { ?>
+				<?php $featured_birds_landscape->the_post(); ?>
 				<div>
 					<figure class="unloaded">
 						<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
@@ -48,12 +48,12 @@ $about_page_excerpt = $page->post_excerpt; ?>
 		<h2><a href="<?php echo home_url( '/blog/' ); ?>">Read The Blog</a></h2>
 	</div>
 
-	<?php if ( $recent_birds->have_posts() ) { ?>
+	<?php if ( $recent_birds_landscape->have_posts() ) { ?>
 		<div class="recent-photographs">
 			<h2>Recent Additions</h2>
 			<div class="row">
-				<?php while ( $recent_birds->have_posts() ) { ?>
-					<?php $recent_birds->the_post(); ?>
+				<?php while ( $recent_birds_landscape->have_posts() ) { ?>
+					<?php $recent_birds_landscape->the_post(); ?>
 					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
 						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
@@ -69,12 +69,12 @@ $about_page_excerpt = $page->post_excerpt; ?>
 		</div>
 	<?php } ?>
 
-	<?php if ( $favorite_birds->have_posts() ) { ?>
+	<?php if ( $favorite_birds_landscape->have_posts() ) { ?>
 		<div class="recent-photographs">
 			<h2>Personal Favorites</h2>
 			<div class="row">
-				<?php while ( $favorite_birds->have_posts() ) { ?>
-					<?php $favorite_birds->the_post(); ?>
+				<?php while ( $favorite_birds_landscape->have_posts() ) { ?>
+					<?php $favorite_birds_landscape->the_post(); ?>
 					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
 						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
