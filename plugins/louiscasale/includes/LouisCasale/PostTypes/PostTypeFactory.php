@@ -35,6 +35,9 @@ class PostTypeFactory {
 				case BIRD_POST_TYPE:
 					$instance = new BirdPostType();
 					break;
+				case LANDSCAPE_POST_TYPE:
+					$instance = new LandscapePostType();
+					break;
 				default:
 					throw new \Exception(
 						"PostTypeFactory - Unknown PostType: $post_type"
@@ -75,6 +78,7 @@ class PostTypeFactory {
 			POST_POST_TYPE,
 			PAGE_POST_TYPE,
 			BIRD_POST_TYPE,
+			LANDSCAPE_POST_TYPE
 		);
 		$post_types = apply_filters( 'louiscasale_post_types', $post_types );
 		return $post_types;

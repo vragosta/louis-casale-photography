@@ -3,11 +3,13 @@
 namespace LouisCasale;
 
 use LouisCasale\Admin\MetaBoxes\BirdMetaBox;
+use LouisCasale\Admin\MetaBoxes\LandscapeMetaBox;
 use LouisCasale\Admin\MetaBoxes\PostMetaFieldsMetaBox;
 use LouisCasale\Admin\BirdColumnsSupport;
 use LouisCasale\Admin\MetaBoxes\UserMetaBox;
 use LouisCasale\Endpoints\Contact;
 use LouisCasale\Finders\BirdFinder;
+use LouisCasale\Finders\LandscapeFinder;
 use LouisCasale\PostTypes\PostTypeFactory;
 use LouisCasale\Taxonomies\TaxonomyFactory;
 
@@ -69,8 +71,11 @@ class Plugin {
 	 * Sets up the various metaboxes and admin customizations.
 	 */
 	function init_admin() {
-		$project_meta_box = new BirdMetaBox();
-		$project_meta_box->register();
+		$bird_meta_box = new BirdMetaBox();
+		$bird_meta_box->register();
+
+		$landscape_meta_box = new LandscapeMetaBox();
+		$landscape_meta_box->register();
 
 		$postmeta_meta_box = new PostMetaFieldsMetaBox();
 		$postmeta_meta_box->register();
@@ -84,5 +89,9 @@ class Plugin {
 
 	function get_bird_finder( $post_id ) {
 		return new BirdFinder( $post_id );
+	}
+
+	function get_landscape_finder( $post_id ) {
+		return new LandscapeFinder( $post_id );
 	}
 }

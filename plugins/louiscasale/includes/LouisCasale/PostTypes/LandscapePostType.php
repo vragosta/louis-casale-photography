@@ -3,27 +3,27 @@
 namespace LouisCasale\PostTypes;
 
 /**
- * BirdPostType is a custom post type object for storing projects
+ * LandscapePostType is a custom post type object for storing projects
  * in WordPress.
  */
-class BirdPostType extends BasePostType {
+class LandscapePostType extends BasePostType {
 	public function get_name() {
-		return BIRD_POST_TYPE;
+		return LANDSCAPE_POST_TYPE;
 	}
 
 	public function get_labels() {
 		return array(
-			'name'               => __( 'Birds', 'listen' ),
-			'singular_name'      => __( 'Bird', 'listen' ),
-			'menu_name'          => __( 'Birds', 'listen' ),
-			'parent_item_colon'  => __( 'Parent Bird:', 'listen' ),
-			'all_items'          => __( 'All Birds', 'listen' ),
-			'view_item'          => __( 'View Bird', 'listen' ),
-			'add_new_item'       => __( 'Add New Bird', 'listen' ),
+			'name'               => __( 'Landscapes', 'listen' ),
+			'singular_name'      => __( 'Landscape', 'listen' ),
+			'menu_name'          => __( 'Landscapes', 'listen' ),
+			'parent_item_colon'  => __( 'Parent Landscape:', 'listen' ),
+			'all_items'          => __( 'All Landscapes', 'listen' ),
+			'view_item'          => __( 'View Landscape', 'listen' ),
+			'add_new_item'       => __( 'Add New Landscape', 'listen' ),
 			'add_new'            => __( 'Add New', 'listen' ),
-			'edit_item'          => __( 'Edit Bird', 'listen' ),
-			'update_item'        => __( 'Update Bird', 'listen' ),
-			'search_items'       => __( 'Search Birds', 'listen' ),
+			'edit_item'          => __( 'Edit Landscape', 'listen' ),
+			'update_item'        => __( 'Update Landscape', 'listen' ),
+			'search_items'       => __( 'Search Landscapes', 'listen' ),
 			'not_found'          => __( 'Not found', 'listen' ),
 			'not_found_in_trash' => __( 'Not found in Trash', 'listen' )
 		);
@@ -34,13 +34,13 @@ class BirdPostType extends BasePostType {
 			'labels'              => $this->get_labels(),
 			'supports'            => $this->get_editor_support(),
 			'hierarchical'        => false,
-			'rewrite'             => array( 'slug' => 'birds', 'with_front' => false ),
+			'rewrite'             => array( 'slug' => 'landscape', 'with_front' => false ),
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,
 			'show_in_nav_menus'   => true,
 			'show_in_admin_bar'   => true,
-			'menu_icon'           => 'dashicons-twitter',
+			'menu_icon'           => 'dashicons-format-gallery',
 			'menu_position'       => 26,
 			'can_export'          => true,
 			'has_archive'         => true,
@@ -64,8 +64,6 @@ class BirdPostType extends BasePostType {
 	}
 
 	public function get_supported_taxonomies() {
-		return array(
-			FAMILY_TAXONOMY,
-		);
+		return array();
 	}
 }
