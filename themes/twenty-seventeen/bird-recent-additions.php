@@ -10,7 +10,7 @@ namespace LouisCasale;
 
 get_header();
 
-$birds = get_recent_birds();
+$recent_birds_landscape = get_recent_birds_landscape();
 $count = 0;
 
 ?>
@@ -19,10 +19,10 @@ $count = 0;
 
 	<?php louiscasale_breadcrumbs(); ?>
 
-	<?php if ( $birds->have_posts() ) { ?>
+	<?php if ( $recent_birds_landscape->have_posts() ) { ?>
 		<div class="row">
-			<?php while ( $birds->have_posts() ) { ?>
-				<?php $birds->the_post(); ?>
+			<?php while ( $recent_birds_landscape->have_posts() ) { ?>
+				<?php $recent_birds_landscape->the_post(); ?>
 
 				<?php if ( $count !== 0 && $count % 4 === 0 ) { ?>
 					</div>
