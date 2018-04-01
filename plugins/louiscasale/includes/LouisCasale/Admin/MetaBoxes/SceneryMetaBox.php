@@ -1,9 +1,9 @@
 <?php
 
 namespace LouisCasale\Admin\MetaBoxes;
-use LouisCasale\Finders\LandscapeFinder;
+use LouisCasale\Finders\SceneryFinder;
 
-class LandscapeMetaBox {
+class SceneryMetaBox {
 
 	/**
 	 * Registers metabox with WordPress.
@@ -13,8 +13,8 @@ class LandscapeMetaBox {
 	 * @return void
 	 */
 	function register() {
-		add_action( 'add_meta_boxes', array( $this, 'louiscasale_landscape_metaboxes' ) );
-		add_action( 'save_post', array( $this, 'louiscasale_landscape_save_data' ) );
+		add_action( 'add_meta_boxes', array( $this, 'louiscasale_scenery_metaboxes' ) );
+		add_action( 'save_post', array( $this, 'louiscasale_scenery_save_data' ) );
 	}
 
 	/**
@@ -24,12 +24,12 @@ class LandscapeMetaBox {
 	 * @uses   add_meta_box()
 	 * @return void
 	 */
-	function louiscasale_landscape_metaboxes() {
+	function louiscasale_scenery_metaboxes() {
 		add_meta_box(
 			'configuration',
 			__( 'Configuration', 'louiscasale_com' ),
-			array( $this, 'louiscasale_landscape_callback' ),
-			LANDSCAPE_POST_TYPE
+			array( $this, 'louiscasale_scenery_callback' ),
+			SCENERY_POST_TYPE
 		);
 	}
 
@@ -40,15 +40,15 @@ class LandscapeMetaBox {
 	 * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
 	 * @return void
 	 */
-	function louiscasale_landscape_callback( $post ) {
+	function louiscasale_scenery_callback( $post ) {
 		# Add a nonce field so we can check for it later.
-		wp_nonce_field( 'louiscasale_landscape_save_data', 'louiscasale_landscape_nonce' );
+		wp_nonce_field( 'louiscasale_scenery_save_data', 'louiscasale_scenery_nonce' );
 
 		# Transfer $key to _$key.
 		$this->transfer_key( $post->ID, 'featured' );
 
-		# Call LandscapeFinder class methods.
-		$finder = new LandscapeFinder( $post->ID );
+		# Call SceneryFinder class methods.
+		$finder = new SceneryFinder( $post->ID );
 		$is_featured = $finder->is_featured();
 		$is_favorited = $finder->is_favorited();
 
@@ -57,7 +57,7 @@ class LandscapeMetaBox {
 		<table style="width: 100%;">
 		<tr>
 			<td>
-				<label for="_featured"><?php echo esc_html( __( 'Feature Landscape', 'louiscasale_com' ) ); ?></label>
+				<label for="_featured"><?php echo esc_html( __( 'Feature Scenery', 'louiscasale_com' ) ); ?></label>
 			</td>
 			<td>
 				<input name="_featured" type="checkbox" <?php echo $is_featured == true ? 'checked': ''; ?> />
@@ -65,7 +65,7 @@ class LandscapeMetaBox {
 		</tr>
 		<tr>
 			<td>
-				<label for="_favorited"><?php echo esc_html( __( 'Favorite Landscape', 'louiscasale_com' ) ); ?></label>
+				<label for="_favorited"><?php echo esc_html( __( 'Favorite Scenery', 'louiscasale_com' ) ); ?></label>
 			</td>
 			<td>
 				<input name="_favorited" type="checkbox" <?php echo $is_favorited == true ? 'checked': ''; ?> />
@@ -81,17 +81,17 @@ class LandscapeMetaBox {
 	 * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
 	 * @return void
 	 */
-	function louiscasale_landscape_save_data( $post_id ) {
+	function louiscasale_scenery_save_data( $post_id ) {
 		/**
 		 * We need to verify this came from our screen and with proper authorization,
 		 * because the save_post action can be triggered at other times.
 		 */
-		if ( ! isset( $_POST['louiscasale_landscape_nonce'] ) ) {
+		if ( ! isset( $_POST['louiscasale_scenery_nonce'] ) ) {
 			return;
 		}
 
 		# Verify that the nonce is valid.
-		if ( ! wp_verify_nonce( $_POST['louiscasale_landscape_nonce'], 'louiscasale_landscape_save_data' ) ) {
+		if ( ! wp_verify_nonce( $_POST['louiscasale_scenery_nonce'], 'louiscasale_scenery_save_data' ) ) {
 			return;
 		}
 

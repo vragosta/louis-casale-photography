@@ -3,13 +3,15 @@
 namespace LouisCasale;
 
 use LouisCasale\Admin\MetaBoxes\BirdMetaBox;
-use LouisCasale\Admin\MetaBoxes\LandscapeMetaBox;
+use LouisCasale\Admin\MetaBoxes\SceneryMetaBox;
+use LouisCasale\Admin\MetaBoxes\WildlifeMetaBox;
 use LouisCasale\Admin\MetaBoxes\PostMetaFieldsMetaBox;
 use LouisCasale\Admin\BirdColumnsSupport;
 use LouisCasale\Admin\MetaBoxes\UserMetaBox;
 use LouisCasale\Endpoints\Contact;
 use LouisCasale\Finders\BirdFinder;
-use LouisCasale\Finders\LandscapeFinder;
+use LouisCasale\Finders\SceneryFinder;
+use LouisCasale\Finders\WildlifeFinder;
 use LouisCasale\PostTypes\PostTypeFactory;
 use LouisCasale\Taxonomies\TaxonomyFactory;
 
@@ -74,8 +76,11 @@ class Plugin {
 		$bird_meta_box = new BirdMetaBox();
 		$bird_meta_box->register();
 
-		$landscape_meta_box = new LandscapeMetaBox();
-		$landscape_meta_box->register();
+		$scenery_meta_box = new SceneryMetaBox();
+		$scenery_meta_box->register();
+
+		$wildlife_meta_box = new WildlifeMetaBox();
+		$wildlife_meta_box->register();
 
 		$postmeta_meta_box = new PostMetaFieldsMetaBox();
 		$postmeta_meta_box->register();
@@ -91,7 +96,11 @@ class Plugin {
 		return new BirdFinder( $post_id );
 	}
 
-	function get_landscape_finder( $post_id ) {
-		return new LandscapeFinder( $post_id );
+	function get_scenery_finder( $post_id ) {
+		return new SceneryFinder( $post_id );
+	}
+
+	function get_wildlife_finder( $post_id ) {
+		return new WildlifeFinder( $post_id );
 	}
 }

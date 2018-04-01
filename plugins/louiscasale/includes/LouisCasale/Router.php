@@ -71,7 +71,7 @@ class Router {
 	public $routes;
 
 	public function get_version() {
-		return '1.0.7';
+		return '1.0.8';
 	}
 
 	public function register() {
@@ -104,11 +104,11 @@ class Router {
 
 		switch ( $route_name ) {
 
-			case 'birds-landscape/recent':
+			case 'recent':
 				$template_file = 'recent-additions.php';
 				break;
 
-			case 'birds-landscape/favorites':
+			case 'favorites':
 				$template_file = 'favorites.php';
 				break;
 
@@ -174,7 +174,7 @@ class Router {
 			 * Bird Families : /families/
 			 */
 			array(
-				'birds-landscape/recent',
+				'recent',
 				'^recent-additions/?$',
 				array(
 					'bird_recent' => true,
@@ -182,7 +182,7 @@ class Router {
 			),
 
 			array(
-				'birds-landscape/favorites',
+				'favorites',
 				'^favorites/?$',
 				array(
 					'bird_favorites' => true,

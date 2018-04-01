@@ -3,29 +3,29 @@
 namespace LouisCasale\PostTypes;
 
 /**
- * LandscapePostType is a custom post type object for storing projects
+ * SceneryPostType is a custom post type object for storing projects
  * in WordPress.
  */
-class LandscapePostType extends BasePostType {
+class SceneryPostType extends BasePostType {
 	public function get_name() {
-		return LANDSCAPE_POST_TYPE;
+		return SCENERY_POST_TYPE;
 	}
 
 	public function get_labels() {
 		return array(
-			'name'               => __( 'Landscapes', 'listen' ),
-			'singular_name'      => __( 'Landscape', 'listen' ),
-			'menu_name'          => __( 'Landscapes', 'listen' ),
-			'parent_item_colon'  => __( 'Parent Landscape:', 'listen' ),
-			'all_items'          => __( 'All Landscapes', 'listen' ),
-			'view_item'          => __( 'View Landscape', 'listen' ),
-			'add_new_item'       => __( 'Add New Landscape', 'listen' ),
-			'add_new'            => __( 'Add New', 'listen' ),
-			'edit_item'          => __( 'Edit Landscape', 'listen' ),
-			'update_item'        => __( 'Update Landscape', 'listen' ),
-			'search_items'       => __( 'Search Landscapes', 'listen' ),
-			'not_found'          => __( 'Not found', 'listen' ),
-			'not_found_in_trash' => __( 'Not found in Trash', 'listen' )
+			'name'               => __( 'Scenery', 'louiscasale' ),
+			'singular_name'      => __( 'Scenery', 'louiscasale' ),
+			'menu_name'          => __( 'Scenery', 'louiscasale' ),
+			'parent_item_colon'  => __( 'Parent Scenery:', 'louiscasale' ),
+			'all_items'          => __( 'All Scenery', 'louiscasale' ),
+			'view_item'          => __( 'View Scenery', 'louiscasale' ),
+			'add_new_item'       => __( 'Add New Scenery', 'louiscasale' ),
+			'add_new'            => __( 'Add New', 'louiscasale' ),
+			'edit_item'          => __( 'Edit Scenery', 'louiscasale' ),
+			'update_item'        => __( 'Update Scenery', 'louiscasale' ),
+			'search_items'       => __( 'Search Scenery', 'louiscasale' ),
+			'not_found'          => __( 'Not found', 'louiscasale' ),
+			'not_found_in_trash' => __( 'Not found in Trash', 'louiscasale' )
 		);
 	}
 
@@ -34,7 +34,7 @@ class LandscapePostType extends BasePostType {
 			'labels'              => $this->get_labels(),
 			'supports'            => $this->get_editor_support(),
 			'hierarchical'        => false,
-			'rewrite'             => array( 'slug' => 'landscape', 'with_front' => false ),
+			'rewrite'             => array( 'slug' => 'scenery', 'with_front' => false ),
 			'public'              => true,
 			'show_ui'             => true,
 			'show_in_menu'        => true,

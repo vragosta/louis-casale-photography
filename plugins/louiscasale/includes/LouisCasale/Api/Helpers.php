@@ -281,9 +281,9 @@ function is_bird_families() {
 	return get_query_var( 'bird_families' );
 }
 
-function get_featured_birds_landscape( $posts_per_page = null ) {
+function get_featured( $posts_per_page = null ) {
 	$featured = new \WP_Query( array(
-		'post_type' => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
+		'post_type' => array( BIRD_POST_TYPE, SCENERY_POST_TYPE, WILDLIFE_POST_TYPE ),
 		'posts_per_page' => $posts_per_page ?: 6,
 		'meta_query' => array(
 			array(
@@ -297,24 +297,24 @@ function get_featured_birds_landscape( $posts_per_page = null ) {
 	if ( $featured->post_count === 0 ) {
 		$featured = new \WP_Query( array(
 			'post_type'      => LANDSCAPE_POST_TYPE,
-			'posts_per_page' => $posts_per_page ? $posts_per_page : 6,
+			'posts_per_page' => $posts_per_page ?: 6,
 		) );
 	}
 
 	return $featured;
 }
 
-function get_recent_birds_landscape( $posts_per_page = null ) {
+function get_recent( $posts_per_page = null ) {
 	return new \WP_Query( array(
-		'post_type'      => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
-		'posts_per_page' => $posts_per_page ? $posts_per_page : 20,
+		'post_type'      => array( BIRD_POST_TYPE, SCENERY_POST_TYPE, WILDLIFE_POST_TYPE ),
+		'posts_per_page' => $posts_per_page ?: 20,
 	) );
 }
 
-function get_favorite_birds_landscape( $posts_per_page ) {
+function get_favorited( $posts_per_page = null ) {
 	$favorite = new \WP_Query( array(
-		'post_type'      => array( BIRD_POST_TYPE, LANDSCAPE_POST_TYPE ),
-		'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+		'post_type'      => array( BIRD_POST_TYPE, SCENERY_POST_TYPE, WILDLIFE_POST_TYPE ),
+		'posts_per_page' => $posts_per_page ?: -1,
 		'meta_query'     => array(
 			array(
 				'key'     => '_favorited',
@@ -327,7 +327,7 @@ function get_favorite_birds_landscape( $posts_per_page ) {
 	if ( $favorite->post_count === 0 ) {
 		$favorite = new \WP_Query( array(
 			'post_type'      => BIRD_POST_TYPE,
-			'posts_per_page' => $posts_per_page ? $posts_per_page : -1,
+			'posts_per_page' => $posts_per_page ?: -1,
 		) );
 	}
 

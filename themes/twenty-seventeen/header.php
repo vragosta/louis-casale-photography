@@ -34,7 +34,9 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 							<li><a href="<?php echo home_url( '/recent-additions/' ); ?>" <?php echo \LouisCasale\is_bird_recent_additions() ? 'class="active"' : ''; ?>>Recent Additions</a></li>
 							<li><a href="<?php echo home_url( '/favorites/' ); ?>" <?php echo \LouisCasale\is_bird_favorites() ? 'class="active"' : ''; ?>>Personal Favorites</a></li>
 							<li><a href="<?php echo home_url( '/families/' ); ?>" <?php echo \LouisCasale\is_bird_families() ? 'class="active"' : ''; ?>>Birds by Family</a></li>
-							<li><a href="<?php echo home_url( '/birds/' ); ?>" <?php echo is_archive( 'bird' ) ? 'class="active"' : ''; ?>>All Birds</a></li>
+							<li><a href="<?php echo home_url( '/birds/' ); ?>" <?php echo is_post_type_archive( 'bird' ) ? 'class="active"' : ''; ?>>All Birds</a></li>
+							<li><a href="<?php echo home_url( '/scenery/' ); ?>" <?php echo is_post_type_archive( 'scenery' ) ? 'class="active"' : ''; ?>>Scenery</a></li>
+							<li><a href="<?php echo home_url( '/wildlife/' ); ?>" <?php echo is_post_type_archive( 'wildlife' ) ? 'class="active"' : ''; ?>>Other Wildlife</a></li>
 						</ul>
 					</li>
 					<li><a href="<?php echo home_url( '/blog/' ); ?>" <?php echo \LouisCasale\is_blog() ? 'class="active"' : ''; ?>>Blog</a></li>

@@ -78,7 +78,8 @@
 }
 
 .navigation .galleries.display {
-	height: 88px;
+	/*height: 88px;*/
+	height: 130px;
 }
 
 .navigation .contact.display {

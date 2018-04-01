@@ -12,7 +12,7 @@ namespace LouisCasale\Finders;
  * $finder = new LandscapeFinder();
  * $finder->get_foo();
  */
-class LandscapeFinder {
+class SceneryFinder {
 
 	public $post_id;
 	public $post;

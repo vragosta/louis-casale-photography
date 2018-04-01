@@ -10,7 +10,7 @@ namespace LouisCasale;
 
 get_header();
 
-$recent_birds_landscape = get_recent_birds_landscape();
+$recent_birds_landscape = get_recent();
 $count = 0;
 
 ?>

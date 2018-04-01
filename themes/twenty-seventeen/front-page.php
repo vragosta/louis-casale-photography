@@ -10,9 +10,9 @@ namespace LouisCasale;
 
 get_header();
 
-$featured_birds_landscape = get_featured_birds_landscape();
-$recent_birds_landscape = get_recent_birds_landscape( 2 );
-$favorite_birds_landscape = get_favorite_birds_landscape( 2 );
+$featured = get_featured();
+$recent_birds_landscape = get_recent( 2 );
+$favorite_birds_landscape = get_favorited( 2 );
 $blog_posts = get_recent_posts();
 
 $page = get_page_by_path( 'about' );
@@ -20,10 +20,10 @@ $about_page_excerpt = $page->post_excerpt; ?>
 
 <section class="front-page content col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9">
 
-	<?php if ( $featured_birds_landscape->have_posts() ) { ?>
+	<?php if ( $featured->have_posts() ) { ?>
 		<div class="carousel main">
-			<?php while ( $featured_birds_landscape->have_posts() ) { ?>
-				<?php $featured_birds_landscape->the_post(); ?>
+			<?php while ( $featured->have_posts() ) { ?>
+				<?php $featured->the_post(); ?>
 				<div>
 					<figure class="unloaded">
 						<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying the 'All Landscape' archive.
+ * Template for displaying the 'Scenery' archive.
  *
  * @package LouisCasale - Twenty Seventeen
  * @since 0.1.0
@@ -10,7 +10,12 @@ namespace LouisCasale;
 
 get_header();
 
-$landscape = get_all_landscape();
+$posts = new \WP_Query( array(
+	'post_type'      => SCENERY_POST_TYPE,
+	'posts_per_page' => -1,
+	'orderby'        => 'title',
+	'order'          => 'ASC',
+) );
 $count = 0;
 
 ?>
@@ -19,10 +24,10 @@ $count = 0;
 
 	<?php louiscasale_breadcrumbs(); ?>
 
-	<?php if ( $landscape->have_posts() ) { ?>
+	<?php if ( $posts->have_posts() ) { ?>
 		<div class="row">
-		<?php while ( $landscape->have_posts() ) { ?>
-			<?php $landscape->the_post(); ?>
+		<?php while ( $posts->have_posts() ) { ?>
+			<?php $posts->the_post(); ?>
 
 			<?php if ( $count !== 0 && $count % 4 === 0 ) { ?>
 				</div>
@@ -44,7 +49,7 @@ $count = 0;
 		</div>
 
 	<?php } else { ?>
-		<p class="not-set">There are no published landscape.</p>
+		<p class="not-set">There are no published scenery.</p>
 	<?php } ?>
 
 	<i id="swipebox-prev" class="custom-arrow left ion-chevron-left"></i>

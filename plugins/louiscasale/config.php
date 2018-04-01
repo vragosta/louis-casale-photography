@@ -10,7 +10,8 @@ define( 'LOUISCASALE_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
 define( 'POST_POST_TYPE' , 'post' );
 define( 'PAGE_POST_TYPE' , 'page' );
 define( 'BIRD_POST_TYPE' , 'bird' );
-define( 'LANDSCAPE_POST_TYPE' , 'landscape' );
+define( 'SCENERY_POST_TYPE' , 'scenery' );
+define( 'WILDLIFE_POST_TYPE', 'wildlife' );
 
 # Taxonomies
 define( 'CATEGORY_TAXONOMY' , 'category' );

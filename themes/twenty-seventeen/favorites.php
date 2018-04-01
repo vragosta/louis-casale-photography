@@ -10,7 +10,7 @@ namespace LouisCasale;
 
 get_header();
 
-$favorite_birds_landscape = get_favorite_birds_landscape();
+$favorite_birds_landscape = get_favorited();
 $count = 0;
 
 ?>

@@ -35,8 +35,11 @@ class PostTypeFactory {
 				case BIRD_POST_TYPE:
 					$instance = new BirdPostType();
 					break;
-				case LANDSCAPE_POST_TYPE:
-					$instance = new LandscapePostType();
+				case SCENERY_POST_TYPE:
+					$instance = new SceneryPostType();
+					break;
+				case WILDLIFE_POST_TYPE:
+					$instance = new WildlifePostType();
 					break;
 				default:
 					throw new \Exception(
@@ -78,7 +81,8 @@ class PostTypeFactory {
 			POST_POST_TYPE,
 			PAGE_POST_TYPE,
 			BIRD_POST_TYPE,
-			LANDSCAPE_POST_TYPE
+			SCENERY_POST_TYPE,
+			WILDLIFE_POST_TYPE
 		);
 		$post_types = apply_filters( 'louiscasale_post_types', $post_types );
 		return $post_types;
