@@ -104,12 +104,12 @@ class Router {
 
 		switch ( $route_name ) {
 
-			case 'birds/recent':
-				$template_file = 'bird-recent-additions.php';
+			case 'birds-landscape/recent':
+				$template_file = 'recent-additions.php';
 				break;
 
-			case 'birds/favorites':
-				$template_file = 'bird-favorites.php';
+			case 'birds-landscape/favorites':
+				$template_file = 'favorites.php';
 				break;
 
 			case 'birds/families':
@@ -167,14 +167,14 @@ class Router {
 		$routes = array(
 
 			/*
-			 * Bird Routes
+			 * Bird + Landscape Routes
 			 *
-			 * Bird Recent Additions : /recent-additions/
-			 * Bird Favorites : /favorites/
+			 * Bird + Landscape Recent Additions : /recent-additions/
+			 * Bird + Landscape Favorites : /favorites/
 			 * Bird Families : /families/
 			 */
 			array(
-				'birds/recent',
+				'birds-landscape/recent',
 				'^recent-additions/?$',
 				array(
 					'bird_recent' => true,
@@ -182,7 +182,7 @@ class Router {
 			),
 
 			array(
-				'birds/favorites',
+				'birds-landscape/favorites',
 				'^favorites/?$',
 				array(
 					'bird_favorites' => true,
