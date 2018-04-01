@@ -11,8 +11,8 @@ namespace LouisCasale;
 get_header();
 
 $featured = get_featured();
-$recent_birds_landscape = get_recent( 2 );
-$favorite_birds_landscape = get_favorited( 2 );
+$recent = get_recent( 4 );
+$favorite = get_favorited( 4 );
 $blog_posts = get_recent_posts();
 
 $page = get_page_by_path( 'about' );
@@ -48,13 +48,13 @@ $about_page_excerpt = $page->post_excerpt; ?>
 		<h2><a href="<?php echo home_url( '/blog/' ); ?>">Read The Blog</a></h2>
 	</div>
 
-	<?php if ( $recent_birds_landscape->have_posts() ) { ?>
+	<?php if ( $recent->have_posts() ) { ?>
 		<div class="recent-photographs">
 			<h2>Recent Additions</h2>
 			<div class="row">
-				<?php while ( $recent_birds_landscape->have_posts() ) { ?>
-					<?php $recent_birds_landscape->the_post(); ?>
-					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
+				<?php while ( $recent->have_posts() ) { ?>
+					<?php $recent->the_post(); ?>
+					<div class="recent-item col-xs-12 col-sm-12 col-md-3">
 						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
 								<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
@@ -69,13 +69,13 @@ $about_page_excerpt = $page->post_excerpt; ?>
 		</div>
 	<?php } ?>
 
-	<?php if ( $favorite_birds_landscape->have_posts() ) { ?>
+	<?php if ( $favorite->have_posts() ) { ?>
 		<div class="recent-photographs">
 			<h2>Personal Favorites</h2>
 			<div class="row">
-				<?php while ( $favorite_birds_landscape->have_posts() ) { ?>
-					<?php $favorite_birds_landscape->the_post(); ?>
-					<div class="recent-item col-xs-12 col-sm-12 col-md-6">
+				<?php while ( $favorite->have_posts() ) { ?>
+					<?php $favorite->the_post(); ?>
+					<div class="recent-item col-xs-12 col-sm-12 col-md-3">
 						<a href="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?>" data-rel="lightbox" title="<?php echo get_the_excerpt(); ?>" data-id="<?php echo $post->ID; ?>">
 							<figure class="photo unloaded">
 								<div style="background-image: url( <?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' )[0]; ?> );"></div>
