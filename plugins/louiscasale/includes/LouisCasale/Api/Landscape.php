@@ -58,3 +58,12 @@ function get_favorite_landscape( $posts_per_page ) {
 
 	return $landscape;
 }
+
+function get_all_landscape() {
+	return new \WP_Query( array(
+		'post_type'      => LANDSCAPE_POST_TYPE,
+		'posts_per_page' => -1,
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+	) );
+}
