@@ -70,7 +70,7 @@
 }
 
 .navigation .galleries,
-.navigation .contact {
+.navigation .contact-dropdown {
 	height: 0px;
 	opacity: 0;
 	visibility: hidden;
@@ -82,19 +82,19 @@
 	height: 130px;
 }
 
-.navigation .contact.display {
+.navigation .contact-dropdown.display {
 	height: 40px;
 }
 
 .navigation .galleries.display,
-.navigation .contact.display {
+.navigation .contact-dropdown.display {
 	opacity: 1;
 	visibility: visible;
 	margin: 20px 0 0;
 }
 
 .navigation .galleries li,
-.navigation .contact li {
+.navigation .contact-dropdown li {
 	margin: 0 0 0 10px;;
 }
 

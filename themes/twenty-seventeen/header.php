@@ -6,7 +6,7 @@
  * @since 0.1.0
  */
 
-$user = get_user_by( 'login', 'lcasale' );
+$user = get_user_by( 'login', 'vragosta' );
 $facebook = get_user_meta( $user->ID, '_facebook', true );
 $twitter = get_user_meta( $user->ID, '_twitter', true );
 $instagram = get_user_meta( $user->ID, '_instagram', true );
@@ -42,7 +42,7 @@ $instagram = get_user_meta( $user->ID, '_instagram', true );
 					<li><a href="<?php echo home_url( '/blog/' ); ?>" <?php echo \LouisCasale\is_blog() ? 'class="active"' : ''; ?>>Blog</a></li>
 					<li>
 						<a id="contact">Contact</a>
-						<ul class="contact <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
+						<ul class="contact-dropdown <?php echo is_page( 'contact' ) || is_page( 'developer' ) ? 'display' : ''; ?>">
 							<li><a href="<?php echo home_url( '/contact/' ); ?>" <?php echo is_page( 'contact' ) ? 'class="active"' : ''; ?>>Louis Casale</a></li>
 							<li><a href="<?php echo home_url( '/contact/developer' ); ?>" <?php echo is_page( 'developer' ) ? 'class="active"' : ''; ?>>Web Developer</a></li>
 						</ul>

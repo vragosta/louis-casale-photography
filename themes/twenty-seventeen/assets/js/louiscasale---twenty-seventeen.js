@@ -138,10 +138,10 @@
 			});
 
 			$( 'body' ).on( 'click', '#contact', function() {
-				if ( $( '.contact' ).hasClass( 'display' ) ) {
-					$( '.contact' ).removeClass( 'display' );
+				if ( $( '.contact-dropdown' ).hasClass( 'display' ) ) {
+					$( '.contact-dropdown' ).removeClass( 'display' );
 				} else {
-					$( '.contact' ).addClass( 'display' );
+					$( '.contact-dropdown' ).addClass( 'display' );
 				}
 			});
 		},
